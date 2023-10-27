@@ -1,0 +1,132 @@
+/* Importing the express module and creating an instance of it. */
+const express = require('express')
+const app = express.Router()
+const Usuario = require('../models/Usuario') // NUESTRO MODELO PARA PERMITIR GENERAR O MODIFICAR USUARIOS CON LA BASE DE DATOS
+const bcryptjs = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+const auth = require('../middlewares/authorization')
+
+//app.get('/obtener', auth, async (req, res) => {
+app.get('/obtener', async (req, res) => {
+	try {
+		const usuarios = await Usuario.find({})
+        res.json({usuarios})
+
+	} catch (error) {
+		res.status(500).json({ msg: 'Hubo un error obteniendo los datos' })
+	}
+})
+
+// CREAR UN USUARIO JWT
+app.post('/crear', async (req, res) => {
+	const { nombre, tipo, username, correo, password } = req.body // OBTENER USUARIO, EMAIL Y PASSWORD DE LA PETICIÓN
+
+	try {
+		const salt = await bcryptjs.genSalt(10);
+        const hashedPassword = await bcryptjs.hash(password, salt);
+        
+        const respuestaDB = await Usuario.create({
+			nombre,
+			tipo,
+            username,
+            correo,
+            password: hashedPassword
+        })
+        const payload = {user:{id:respuestaDB._id}}
+        
+        jwt.sign(payload,process.env.SECRET,{expiresIn:36000},(error,token)=>{
+            if(error)throw error
+            res.json({token})
+            //res.json(respuestaDB)
+        })
+	} catch (error) {
+		return res.status(400).json({
+			msg: error,
+		})
+	}
+})
+
+// INICIAR SESIÓN
+app.post('/login', async (req, res) => {
+	const { email, password } = req.body
+
+	try {
+		let foundUser = await Usuario.findOne({ email:email})
+        if(!foundUser){
+            return res.status(400).json({msg:'El usuario no existe'}) 
+        }
+
+        const passCorrecto = await bcryptjs.compare(password,foundUser.password)
+
+        if(!passCorrecto){
+            return await res.status(400).json({msg: 'Password incorrecto'})
+        }
+
+        const payload = {
+            user:{
+                id: foundUser.id,
+            },
+        }
+
+        //firma del jwt
+        if(email && passCorrecto){
+            jwt.sign(payload, process.env.SECRET, {expiresIn:3600000}, (error,token)=>{
+                if(error) throw error
+
+                res.json({token})
+            })
+        }else{
+            res.json({msg:'Hubo un error', error})
+        }
+	} catch (error) {
+		res.json({ msg: 'Hubo un error', error })
+	}
+})
+
+// VERIFICAR
+app.get('/verificar', auth, async (req, res) => {
+	try {
+        //CONFIRMAMOS QUE EL USUARIO EXISTA EN LA BD Y RETORNAMOS SUS DATOS EXCLUYENDO EL PASSW
+        const usuario = await Usuario.findById(req.user.id).select('-password') //el req.user.id lo obtiene del token NO lo recibe de la url
+        res.json({usuario})
+
+		
+	} catch (error) {
+		// EN CASO DE ERROR DEVOLVEMOS UN MENSAJE CON EL ERROR
+		res.status(500).json({
+			msg: 'Hubo un error',
+			error,
+		})
+	}
+})
+
+// ACTUALIZAR
+//app.put('/actualizar', auth, async (req, res) => {
+app.put('/actualizar', async (req, res) => {
+	const { id, username, email } = req.body
+	try {
+		const updateUsuario = await Usuario.findByIdAndUpdate(id,{username,email},{new:true})
+        res.json({updateUsuario})
+
+	} catch (error) {
+		res.status(500).json({
+			msg: 'Hubo un error actualizando la Usuario',
+		})
+	}
+})
+
+// BORRAR
+app.delete('/borrar', async (req, res) => {
+	const { id } = req.body
+
+	try {
+		const deleteUsuario = await Usuario.findByIdAndRemove({ _id: id })
+		res.json(deleteUsuario)
+	} catch (error) {
+		res.status(500).json({
+			msg: 'Hubo un error borrando el Usuario',
+		})
+	}
+})
+
+module.exports = app
