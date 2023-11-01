@@ -12,10 +12,6 @@ const userSchema = mongoose.Schema(
 			type: String,
 			required: [true,'El tipo de usuario es obligatorio']
 		},
-		username:{
-			type: String,
-			required: [true,'El username es obligatorio']
-		},
 		correo: {
 			type: String,
 			required: [true,'El correo es obligatorio'],
@@ -41,7 +37,7 @@ const userSchema = mongoose.Schema(
 			type: String,
 			required: false,
 		},
-		cumpleaños: {
+		cumpleanios: {
 			type: String,
 			required: false,
 		},

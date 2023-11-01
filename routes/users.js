@@ -17,10 +17,24 @@ app.get('/obtener', async (req, res) => {
 	}
 })
 
+// SINGLE
+app.get('/single/:id', async (req, res) => {
+			
+	try {
+		const single = await Usuario.findById(req.params.id) 
+		res.json({single})
+		
+
+	} catch (error) {
+		res.status(500).json({ msg: 'Hubo un error obteniendo los datos del id '+id+' error: '+error })
+	}
+
+})
+
 // CREAR UN USUARIO JWT
 app.post('/crear', async (req, res) => {
-	const { nombre, tipo, username, correo, password } = req.body // OBTENER USUARIO, EMAIL Y PASSWORD DE LA PETICIÓN
-
+	const { nombre, tipo, correo, password, direccion, telefono, cumpleanios } = req.body 
+	
 	try {
 		const salt = await bcryptjs.genSalt(10);
         const hashedPassword = await bcryptjs.hash(password, salt);
@@ -28,9 +42,11 @@ app.post('/crear', async (req, res) => {
         const respuestaDB = await Usuario.create({
 			nombre,
 			tipo,
-            username,
             correo,
-            password: hashedPassword
+            password: hashedPassword,
+			direccion,
+			telefono,
+			cumpleanios
         })
         const payload = {user:{id:respuestaDB._id}}
         
@@ -45,6 +61,8 @@ app.post('/crear', async (req, res) => {
 		})
 	}
 })
+
+
 
 // INICIAR SESIÓN
 app.post('/login', async (req, res) => {
@@ -103,9 +121,9 @@ app.get('/verificar', auth, async (req, res) => {
 // ACTUALIZAR
 //app.put('/actualizar', auth, async (req, res) => {
 app.put('/actualizar', async (req, res) => {
-	const { id, username, email } = req.body
+	const { id, nombre, tipo, correo, direccion, telefono, cumpleanios } = req.body
 	try {
-		const updateUsuario = await Usuario.findByIdAndUpdate(id,{username,email},{new:true})
+		const updateUsuario = await Usuario.findByIdAndUpdate(id,{nombre, tipo, correo, direccion, telefono, cumpleanios},{new:true})
         res.json({updateUsuario})
 
 	} catch (error) {
@@ -116,15 +134,15 @@ app.put('/actualizar', async (req, res) => {
 })
 
 // BORRAR
-app.delete('/borrar', async (req, res) => {
+app.post('/borrar', async (req, res) => {
 	const { id } = req.body
-
+	
 	try {
 		const deleteUsuario = await Usuario.findByIdAndRemove({ _id: id })
 		res.json(deleteUsuario)
 	} catch (error) {
 		res.status(500).json({
-			msg: 'Hubo un error borrando el Usuario',
+			msg: 'Hubo un error borrando el Usuario '+id,
 		})
 	}
 })

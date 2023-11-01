@@ -3,6 +3,7 @@ const app = express()
 const userRoutes = require('./routes/users')
 const productRoutes = require('./routes/products')
 const categoryRoutes = require('./routes/category')
+const subcategoryRoutes = require('./routes/subcategory')
 const cors = require('cors')
 const connectDB = require('./config/db')
 
@@ -16,6 +17,7 @@ app.use(express.json())
 app.use('/usuario', userRoutes)
 app.use('/producto', productRoutes)
 app.use('/categoria', categoryRoutes)
+app.use('/subcategoria', subcategoryRoutes)
 
 
 app.get('/', (req, res) => res.send('MELL API'))
