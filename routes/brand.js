@@ -1,7 +1,7 @@
 /* Importing the express module and creating an instance of it. */
 const express = require('express')
 const app = express.Router()
-const Categoria = require('../models/Categoria') // NUESTRO MODELO PARA PERMITIR GENERAR O MODIFICAR USUARIOS CON LA BASE DE DATOS
+const Marca = require('../models/Marca') // NUESTRO MODELO PARA PERMITIR GENERAR O MODIFICAR USUARIOS CON LA BASE DE DATOS
 const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const auth = require('../middlewares/authorization')
@@ -9,8 +9,8 @@ const auth = require('../middlewares/authorization')
 // LISTA
 app.get('/obtener', async (req, res) => {
 	try {
-		const categorias = await Categoria.find({})
-        res.json({categorias})
+		const marcas = await Marca.find({})
+        res.json({marcas})
 
 	} catch (error) {
 		res.status(500).json({ msg: 'Hubo un error obteniendo los datos' })
@@ -21,7 +21,7 @@ app.get('/obtener', async (req, res) => {
 app.get('/single/:id', async (req, res) => {
 			
 	try {
-		const single = await Categoria.findById(req.params.id) 
+		const single = await Marca.findById(req.params.id) 
 		res.json({single})
 		
 
@@ -34,25 +34,24 @@ app.get('/single/:id', async (req, res) => {
 
 // CREAR
 app.post('/crear', async (req, res) => {
-	const { nombre, imagen} = req.body 
+	const { nombre } = req.body 
 
 	try {
 
-		const ifExist = await Categoria.find( { nombre: nombre } )
+		const ifExist = await Marca.find( { nombre: nombre } )
 
 		if(ifExist.length > 0){
 
 			res.status(500).json({
-				msg: 'La categoría '+nombre+' ya existe',
+				msg: 'La marca '+nombre+' ya existe',
 			})	
 
 		}else{
 
-		    const nuevaCategoria = await Categoria.create({
-				nombre,
-				imagen
+		    const nuevaMarca = await Marca.create({
+				nombre				
 			})
-        	res.json(nuevaCategoria)
+        	res.json(nuevaMarca)
 
 		}
 	} catch (error) {
@@ -66,32 +65,30 @@ app.post('/crear', async (req, res) => {
 app.put('/actualizar', async (req, res) => {
     const { 
 		id,
-		nombre,
-		imagen
+		nombre
 	 } = req.body 
 	try {
 
-		const ifExist = await Categoria.find( { nombre: nombre, _id: { $ne: id } } )
+		const ifExist = await Marca.find( { nombre: nombre, _id: { $ne: id } } )
 
 		if(ifExist.length > 0){
 			
 			res.status(500).json({
-				msg: 'La categoría '+nombre+' ya existe',
+				msg: 'La marca '+nombre+' ya existe',
 			})	
 
 		}else{
 
-		    const updateCategoria = await Categoria.findByIdAndUpdate(id,{
-				nombre,
-				imagen
+		    const updateMarca = await Marca.findByIdAndUpdate(id,{
+				nombre
 			},{new:true})
-			res.json({updateCategoria})
+			res.json({updateMarca})
 
 		}
 
 	} catch (error) {
 		res.status(500).json({
-			msg: 'Hubo un error actualizando la Categoría',
+			msg: 'Hubo un error actualizando la Marca',
 		})
 	}
 })
@@ -101,11 +98,11 @@ app.post('/borrar', async (req, res) => {
 	const { id } = req.body
 
 	try {
-		const deleteCategoria = await Categoria.findByIdAndRemove({ _id: id })
-		res.json(deleteCategoria)
+		const deleteMarca = await Marca.findByIdAndRemove({ _id: id })
+		res.json(deleteMarca)
 	} catch (error) {
 		res.status(500).json({
-			msg: 'Hubo un error borrando la Categoría',
+			msg: 'Hubo un error borrando la Marca',
 		})
 	}
 })

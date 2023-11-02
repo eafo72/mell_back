@@ -36,25 +36,39 @@ app.post('/crear', async (req, res) => {
 	const { nombre, tipo, correo, password, direccion, telefono, cumpleanios } = req.body 
 	
 	try {
-		const salt = await bcryptjs.genSalt(10);
-        const hashedPassword = await bcryptjs.hash(password, salt);
-        
-        const respuestaDB = await Usuario.create({
-			nombre,
-			tipo,
-            correo,
-            password: hashedPassword,
-			direccion,
-			telefono,
-			cumpleanios
-        })
-        const payload = {user:{id:respuestaDB._id}}
-        
-        jwt.sign(payload,process.env.SECRET,{expiresIn:36000},(error,token)=>{
-            if(error)throw error
-            res.json({token})
-            //res.json(respuestaDB)
-        })
+
+		const ifExist = await Usuario.find( { correo: correo } )
+
+		if(ifExist.length > 0){
+
+			res.status(500).json({
+				msg: 'El correo '+correo+' ya existe',
+			})	
+
+		}else{
+
+			const salt = await bcryptjs.genSalt(10);
+			const hashedPassword = await bcryptjs.hash(password, salt);
+			
+			const respuestaDB = await Usuario.create({
+				nombre,
+				tipo,
+				correo,
+				password: hashedPassword,
+				direccion,
+				telefono,
+				cumpleanios
+			})
+			const payload = {user:{id:respuestaDB._id}}
+			
+			jwt.sign(payload,process.env.SECRET,{expiresIn:36000},(error,token)=>{
+				if(error)throw error
+				res.json({token})
+				//res.json(respuestaDB)
+			})
+			
+		}
+		
 	} catch (error) {
 		return res.status(400).json({
 			msg: error,
@@ -123,8 +137,21 @@ app.get('/verificar', auth, async (req, res) => {
 app.put('/actualizar', async (req, res) => {
 	const { id, nombre, tipo, correo, direccion, telefono, cumpleanios } = req.body
 	try {
-		const updateUsuario = await Usuario.findByIdAndUpdate(id,{nombre, tipo, correo, direccion, telefono, cumpleanios},{new:true})
-        res.json({updateUsuario})
+
+		const ifExist = await Usuario.find( { correo: correo, _id: { $ne: id } } )
+
+		if(ifExist.length > 0){
+
+			res.status(500).json({
+				msg: 'El correo '+correo+' ya existe',
+			})	
+
+		}else{
+
+			const updateUsuario = await Usuario.findByIdAndUpdate(id,{nombre, tipo, correo, direccion, telefono, cumpleanios},{new:true})
+        	res.json({updateUsuario})
+		
+		}
 
 	} catch (error) {
 		res.status(500).json({

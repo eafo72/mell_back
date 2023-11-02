@@ -1,7 +1,7 @@
 /* Importing the express module and creating an instance of it. */
 const express = require('express')
 const app = express.Router()
-const Categoria = require('../models/Categoria') // NUESTRO MODELO PARA PERMITIR GENERAR O MODIFICAR USUARIOS CON LA BASE DE DATOS
+const Proveedor = require('../models/Proveedor') // NUESTRO MODELO PARA PERMITIR GENERAR O MODIFICAR USUARIOS CON LA BASE DE DATOS
 const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const auth = require('../middlewares/authorization')
@@ -9,8 +9,8 @@ const auth = require('../middlewares/authorization')
 // LISTA
 app.get('/obtener', async (req, res) => {
 	try {
-		const categorias = await Categoria.find({})
-        res.json({categorias})
+		const proveedores = await Proveedor.find({})
+        res.json({proveedores})
 
 	} catch (error) {
 		res.status(500).json({ msg: 'Hubo un error obteniendo los datos' })
@@ -21,7 +21,7 @@ app.get('/obtener', async (req, res) => {
 app.get('/single/:id', async (req, res) => {
 			
 	try {
-		const single = await Categoria.findById(req.params.id) 
+		const single = await Proveedor.findById(req.params.id) 
 		res.json({single})
 		
 
@@ -34,25 +34,24 @@ app.get('/single/:id', async (req, res) => {
 
 // CREAR
 app.post('/crear', async (req, res) => {
-	const { nombre, imagen} = req.body 
+	const { nombre } = req.body 
 
 	try {
 
-		const ifExist = await Categoria.find( { nombre: nombre } )
+		const ifExist = await Proveedor.find( { nombre: nombre } )
 
 		if(ifExist.length > 0){
 
 			res.status(500).json({
-				msg: 'La categoría '+nombre+' ya existe',
+				msg: 'El proveedor '+nombre+' ya existe',
 			})	
 
 		}else{
 
-		    const nuevaCategoria = await Categoria.create({
-				nombre,
-				imagen
+		    const nuevoProveedor = await Proveedor.create({
+				nombre				
 			})
-        	res.json(nuevaCategoria)
+        	res.json(nuevoProveedor)
 
 		}
 	} catch (error) {
@@ -66,32 +65,30 @@ app.post('/crear', async (req, res) => {
 app.put('/actualizar', async (req, res) => {
     const { 
 		id,
-		nombre,
-		imagen
+		nombre
 	 } = req.body 
 	try {
 
-		const ifExist = await Categoria.find( { nombre: nombre, _id: { $ne: id } } )
+		const ifExist = await Proveedor.find( { nombre: nombre, _id: { $ne: id } } )
 
 		if(ifExist.length > 0){
 			
 			res.status(500).json({
-				msg: 'La categoría '+nombre+' ya existe',
+				msg: 'El proveedor '+nombre+' ya existe',
 			})	
 
 		}else{
 
-		    const updateCategoria = await Categoria.findByIdAndUpdate(id,{
-				nombre,
-				imagen
+		    const updateProveedor = await Proveedor.findByIdAndUpdate(id,{
+				nombre
 			},{new:true})
-			res.json({updateCategoria})
+			res.json({updateProveedor})
 
 		}
 
 	} catch (error) {
 		res.status(500).json({
-			msg: 'Hubo un error actualizando la Categoría',
+			msg: 'Hubo un error actualizando el proveedor',
 		})
 	}
 })
@@ -101,11 +98,11 @@ app.post('/borrar', async (req, res) => {
 	const { id } = req.body
 
 	try {
-		const deleteCategoria = await Categoria.findByIdAndRemove({ _id: id })
-		res.json(deleteCategoria)
+		const deleteProveedor = await Proveedor.findByIdAndRemove({ _id: id })
+		res.json(deleteProveedor)
 	} catch (error) {
 		res.status(500).json({
-			msg: 'Hubo un error borrando la Categoría',
+			msg: 'Hubo un error borrando el proveedor',
 		})
 	}
 })

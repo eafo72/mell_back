@@ -57,7 +57,18 @@ app.post('/crear', async (req, res) => {
 	} = req.body 
 
 	try {
-        const nuevoProducto = await Producto.create({
+
+		const ifExist = await Producto.find( { nombre: nombre } )
+
+		if(ifExist.length > 0){
+
+			res.status(500).json({
+				msg: 'El producto '+nombre+' ya existe',
+			})	
+
+		}else{
+
+        	const nuevoProducto = await Producto.create({
 			nombre,
 			genero,
 			edad,
@@ -77,8 +88,10 @@ app.post('/crear', async (req, res) => {
 			apartado,
 			estropeado,
 			calificacion
-		})
-        res.json(nuevoProducto)
+			})
+        	res.json(nuevoProducto)
+		}
+
 	} catch (error) {
 		res.status(500).json({
 			msg: 'Hubo un error guardando los datos'+error,
@@ -112,7 +125,18 @@ app.put('/actualizar', async (req, res) => {
 		calificacion
 	 } = req.body 
 	try {
-    	const updateProducto = await Producto.findByIdAndUpdate(id,{
+
+		const ifExist = await Producto.find( { nombre: nombre, _id: { $ne: id } } )
+
+		if(ifExist.length > 0){
+			
+			res.status(500).json({
+				msg: 'El producto '+nombre+' ya existe',
+			})	
+
+		}else{
+
+    		const updateProducto = await Producto.findByIdAndUpdate(id,{
 			nombre,
 			genero,
 			edad,
@@ -132,8 +156,9 @@ app.put('/actualizar', async (req, res) => {
 			apartado,
 			estropeado,
 			calificacion
-		},{new:true})
-        res.json({updateProducto})
+			},{new:true})
+        	res.json({updateProducto})
+		}	
 
 	} catch (error) {
 		res.status(500).json({

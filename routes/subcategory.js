@@ -37,12 +37,25 @@ app.post('/crear', async (req, res) => {
 	const { categoria, nombre, imagen} = req.body 
 
 	try {
-        const nuevaSubcategoria = await Subcategoria.create({
-			categoria,
-			nombre,
-			imagen
-		})
-        res.json(nuevaSubcategoria)
+		const ifExist = await Subcategoria.find( { nombre: nombre } )
+
+		if(ifExist.length > 0){
+
+			res.status(500).json({
+				msg: 'La subcategoría '+nombre+' ya existe',
+			})	
+
+		}else{
+
+			const nuevaSubcategoria = await Subcategoria.create({
+				categoria,
+				nombre,
+				imagen
+			})
+			res.json(nuevaSubcategoria)
+			
+		}
+        
 	} catch (error) {
 		res.status(500).json({
 			msg: 'Hubo un error guardando los datos'+error,
@@ -59,16 +72,30 @@ app.put('/actualizar', async (req, res) => {
 		imagen
 	 } = req.body 
 	try {
-    	const updateSubcategoria = await Subcategoria.findByIdAndUpdate(id,{
-			categoria,
-			nombre,
-			imagen
-		},{new:true})
-        res.json({updateSubcategoria})
+
+		const ifExist = await Subcategoria.find( { nombre: nombre, _id: { $ne: id } } )
+		
+
+		if(ifExist.length > 0){
+
+			res.status(500).json({
+				msg: 'La subcategoría '+nombre+' ya existe',
+			})	
+
+		}else{
+
+			const updateSubcategoria = await Subcategoria.findByIdAndUpdate(id,{
+				categoria,
+				nombre,
+				imagen
+			},{new:true})
+			res.json({updateSubcategoria})
+			
+		}
 
 	} catch (error) {
 		res.status(500).json({
-			msg: 'Hubo un error actualizando la Categoría',
+			msg: 'Hubo un error actualizando la subcategoría',
 		})
 	}
 })
@@ -82,7 +109,7 @@ app.post('/borrar', async (req, res) => {
 		res.json(deleteSubcategoria)
 	} catch (error) {
 		res.status(500).json({
-			msg: 'Hubo un error borrando la Categoría',
+			msg: 'Hubo un error borrando la subcategoría',
 		})
 	}
 })

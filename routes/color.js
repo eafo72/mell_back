@@ -1,7 +1,7 @@
 /* Importing the express module and creating an instance of it. */
 const express = require('express')
 const app = express.Router()
-const Categoria = require('../models/Categoria') // NUESTRO MODELO PARA PERMITIR GENERAR O MODIFICAR USUARIOS CON LA BASE DE DATOS
+const Color = require('../models/Color') // NUESTRO MODELO PARA PERMITIR GENERAR O MODIFICAR USUARIOS CON LA BASE DE DATOS
 const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const auth = require('../middlewares/authorization')
@@ -9,8 +9,8 @@ const auth = require('../middlewares/authorization')
 // LISTA
 app.get('/obtener', async (req, res) => {
 	try {
-		const categorias = await Categoria.find({})
-        res.json({categorias})
+		const colores = await Color.find({})
+        res.json({colores})
 
 	} catch (error) {
 		res.status(500).json({ msg: 'Hubo un error obteniendo los datos' })
@@ -21,7 +21,7 @@ app.get('/obtener', async (req, res) => {
 app.get('/single/:id', async (req, res) => {
 			
 	try {
-		const single = await Categoria.findById(req.params.id) 
+		const single = await Color.findById(req.params.id) 
 		res.json({single})
 		
 
@@ -34,25 +34,26 @@ app.get('/single/:id', async (req, res) => {
 
 // CREAR
 app.post('/crear', async (req, res) => {
-	const { nombre, imagen} = req.body 
+	const { nombre, colorhexa } = req.body 
+
 
 	try {
 
-		const ifExist = await Categoria.find( { nombre: nombre } )
+		const ifExist = await Color.find( { nombre: nombre } )
 
 		if(ifExist.length > 0){
 
 			res.status(500).json({
-				msg: 'La categoría '+nombre+' ya existe',
+				msg: 'El color '+nombre+' ya existe',
 			})	
 
 		}else{
 
-		    const nuevaCategoria = await Categoria.create({
+		    const nuevoColor = await Color.create({
 				nombre,
-				imagen
+				colorhexa				
 			})
-        	res.json(nuevaCategoria)
+        	res.json(nuevoColor)
 
 		}
 	} catch (error) {
@@ -67,31 +68,31 @@ app.put('/actualizar', async (req, res) => {
     const { 
 		id,
 		nombre,
-		imagen
+		colorhexa
 	 } = req.body 
 	try {
 
-		const ifExist = await Categoria.find( { nombre: nombre, _id: { $ne: id } } )
+		const ifExist = await Color.find( { nombre: nombre, _id: { $ne: id } } )
 
 		if(ifExist.length > 0){
 			
 			res.status(500).json({
-				msg: 'La categoría '+nombre+' ya existe',
+				msg: 'El color '+nombre+' ya existe',
 			})	
 
 		}else{
 
-		    const updateCategoria = await Categoria.findByIdAndUpdate(id,{
+		    const updateColor = await Color.findByIdAndUpdate(id,{
 				nombre,
-				imagen
+				colorhexa
 			},{new:true})
-			res.json({updateCategoria})
+			res.json({updateColor})
 
 		}
 
 	} catch (error) {
 		res.status(500).json({
-			msg: 'Hubo un error actualizando la Categoría',
+			msg: 'Hubo un error actualizando el Color',
 		})
 	}
 })
@@ -101,11 +102,11 @@ app.post('/borrar', async (req, res) => {
 	const { id } = req.body
 
 	try {
-		const deleteCategoria = await Categoria.findByIdAndRemove({ _id: id })
-		res.json(deleteCategoria)
+		const deleteColor = await Color.findByIdAndRemove({ _id: id })
+		res.json(deleteColor)
 	} catch (error) {
 		res.status(500).json({
-			msg: 'Hubo un error borrando la Categoría',
+			msg: 'Hubo un error borrando el Color',
 		})
 	}
 })

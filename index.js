@@ -4,6 +4,11 @@ const userRoutes = require('./routes/users')
 const productRoutes = require('./routes/products')
 const categoryRoutes = require('./routes/category')
 const subcategoryRoutes = require('./routes/subcategory')
+const userTypesRoutes = require('./routes/usertypes')
+const brandRoutes = require('./routes/brand')
+const colorRoutes = require('./routes/color')
+const supplierRoutes = require('./routes/supplier')
+
 const cors = require('cors')
 const connectDB = require('./config/db')
 
@@ -18,6 +23,10 @@ app.use('/usuario', userRoutes)
 app.use('/producto', productRoutes)
 app.use('/categoria', categoryRoutes)
 app.use('/subcategoria', subcategoryRoutes)
+app.use('/tipos_usuario', userTypesRoutes)
+app.use('/marca', brandRoutes)
+app.use('/color', colorRoutes)
+app.use('/proveedor', supplierRoutes)
 
 
 app.get('/', (req, res) => res.send('MELL API'))
