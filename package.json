@@ -1,7 +1,7 @@
 {
-	"name": "Mell backend",
+	"name": "mellbackend",
 	"version": "1.0.0",
-	"description": "Mell backend",
+	"description": "mellbackend",
 	"main": "index.js",
 	"scripts": {
 		"start": "nodemon index.js",
