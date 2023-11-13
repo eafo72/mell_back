@@ -8,6 +8,14 @@ const productSchema = mongoose.Schema(
 			type: String,
 			required: [true,'El nombre es obligatorio']
 		},
+		descripcion: {
+			type: String,
+			required: false
+		},
+		codigo_comun: {
+			type: String,
+			required: false
+		},
 		genero: {
 			type: String,
 			required: false,
@@ -28,11 +36,11 @@ const productSchema = mongoose.Schema(
 			type: String,
 			required: false,
 		}, 
-		tallas: {
+		talla: {
 			type: String,
 			required: false,
 		}, 
-		colores: {
+		color: {
 			type: String,
 			required: false,
 		}, 
@@ -45,7 +53,7 @@ const productSchema = mongoose.Schema(
 			required: false,
 		}, 
 		fotos_carrusel: {
-			type: String,
+			type: Array,
 			required: false,
 		}, 
 		estatus: {
@@ -57,27 +65,11 @@ const productSchema = mongoose.Schema(
 			required: false,
 		}, 
 		almacen: {
-			type: String,
-			required: false,
-		}, 
-		estante: {
-			type: String,
-			required: false,
-		}, 
-		stock: {
-			type: String,
-			required: false,
-		}, 
-		apartado: {
-			type: String,
-			required: false,
-		}, 
-		estropeado: {
-			type: String,
+			type: Array,
 			required: false,
 		}, 
 		calificacion: {
-			type: String,
+			type: Array,
 			required: false,
 		}, 
 	},
