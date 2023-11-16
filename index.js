@@ -10,7 +10,6 @@ const sizeRoutes = require('./routes/size')
 const colorRoutes = require('./routes/color')
 const supplierRoutes = require('./routes/supplier')
 const storageRoutes = require('./routes/storage')
-const shelfRoutes = require('./routes/shelf')
 const orderRoutes = require('./routes/order')
 
 const cors = require('cors')
@@ -33,7 +32,6 @@ app.use('/talla', sizeRoutes)
 app.use('/color', colorRoutes)
 app.use('/proveedor', supplierRoutes)
 app.use('/almacen', storageRoutes)
-app.use('/estante', shelfRoutes)
 app.use('/pedidos', orderRoutes)
 
 

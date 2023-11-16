@@ -4,9 +4,21 @@ const mongoose = require('mongoose')
 // 2. SCHEMA
 const instorageSchema = mongoose.Schema(
 	{
-		producto: {
+		codigo: {
 			type: String,
-			required: [true,'El producto es obligatorio']
+			required: [true,'El codigo es obligatorio']
+		},
+		codigo_producto: {
+			type: String,
+			required: true
+		},
+		codigo_talla: {
+			type: String,
+			required: true
+		},
+		codigo_color: {
+			type: String,
+			required: true
 		},
 		fechaEntrada:{
 			type: Date,
@@ -23,10 +35,6 @@ const instorageSchema = mongoose.Schema(
 		id_almacen:{
 			type: mongoose.Schema.Types.ObjectId,
 			required: [true,'El id_almacen es obligatorio']
-		},
-		nombre_almacen:{
-			type: String,
-			required: [true,'El nombre_almacen es obligatorio']
 		},
 		estante:{
 			type: String,
