@@ -8,6 +8,9 @@ const storageSchema = mongoose.Schema(
 			type: String,
 			required: [true,'El nombre es obligatorio']
 		},
+		estantes: {
+			type: Array,
+		},
 	
 	},
 	{
@@ -16,7 +19,7 @@ const storageSchema = mongoose.Schema(
 )
 
 // 3. MODELO
-const Storage = mongoose.model('Storage', storageSchema)
+const Almacen = mongoose.model('Almacen', storageSchema)
 
 // 4. EXPORTACIÓN
-module.exports = Storage
+module.exports = Almacen

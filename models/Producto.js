@@ -4,15 +4,15 @@ const mongoose = require('mongoose')
 // 2. SCHEMA
 const productSchema = mongoose.Schema(
 	{
+		codigo: {
+			type: String,
+			required: false
+		},
 		nombre: {
 			type: String,
 			required: [true,'El nombre es obligatorio']
 		},
 		descripcion: {
-			type: String,
-			required: false
-		},
-		codigo_comun: {
 			type: String,
 			required: false
 		},
@@ -37,11 +37,11 @@ const productSchema = mongoose.Schema(
 			required: false,
 		}, 
 		talla: {
-			type: String,
+			type: Array,
 			required: false,
 		}, 
 		color: {
-			type: String,
+			type: Array,
 			required: false,
 		}, 
 		proveedor: {
@@ -62,10 +62,6 @@ const productSchema = mongoose.Schema(
 		}, 
 		precio: {
 			type: String,
-			required: false,
-		}, 
-		almacen: {
-			type: Array,
 			required: false,
 		}, 
 		calificacion: {

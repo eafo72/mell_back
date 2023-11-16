@@ -26,7 +26,7 @@ app.get('/single/:id', async (req, res) => {
 		
 
 	} catch (error) {
-		res.status(500).json({ msg: 'Hubo un error obteniendo los datos del id '+id+' error: '+error })
+		res.status(500).json({ msg: 'Hubo un error obteniendo los datos del id '+req.params.id+' error: '+error })
 	}
 
 })

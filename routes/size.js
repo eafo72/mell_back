@@ -26,7 +26,7 @@ app.get('/single/:id', async (req, res) => {
 		
 
 	} catch (error) {
-		res.status(500).json({ msg: 'Hubo un error obteniendo los datos del id '+id+' error: '+error })
+		res.status(500).json({ msg: 'Hubo un error obteniendo los datos del id '+req.params.id+' error: '+error })
 	}
 
 })
@@ -34,22 +34,28 @@ app.get('/single/:id', async (req, res) => {
 
 // CREAR
 app.post('/crear', async (req, res) => {
-	const { nombre } = req.body 
+	const { nombre, codigo } = req.body 
 
 	try {
-
-		const ifExist = await Talla.find( { nombre: nombre } )
+		const ifExist = await Talla.find( { 
+			$or: [{
+				nombre: nombre
+			}, {
+				codigo: codigo
+			}]
+		 } )
 
 		if(ifExist.length > 0){
 
 			res.status(500).json({
-				msg: 'La talla '+nombre+' ya existe',
+				msg: 'La talla o el código ya existen',
 			})	
 
 		}else{
 
 		    const nuevaTalla = await Talla.create({
-				nombre				
+				nombre,
+				codigo				
 			})
         	res.json(nuevaTalla)
 

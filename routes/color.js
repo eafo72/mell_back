@@ -26,7 +26,7 @@ app.get('/single/:id', async (req, res) => {
 		
 
 	} catch (error) {
-		res.status(500).json({ msg: 'Hubo un error obteniendo los datos del id '+id+' error: '+error })
+		res.status(500).json({ msg: 'Hubo un error obteniendo los datos del id '+req.params.id+' error: '+error })
 	}
 
 })
@@ -34,23 +34,30 @@ app.get('/single/:id', async (req, res) => {
 
 // CREAR
 app.post('/crear', async (req, res) => {
-	const { nombre, colorhexa } = req.body 
+	const { nombre, codigo, colorhexa } = req.body 
 
 
 	try {
 
-		const ifExist = await Color.find( { nombre: nombre } )
+		const ifExist = await Color.find( { 
+			$or: [{
+				nombre: nombre
+			}, {
+				codigo: codigo
+			}]
+		 } )
 
 		if(ifExist.length > 0){
 
 			res.status(500).json({
-				msg: 'El color '+nombre+' ya existe',
+				msg: 'El color o el código ya existen',
 			})	
 
 		}else{
 
 		    const nuevoColor = await Color.create({
 				nombre,
+				codigo,
 				colorhexa				
 			})
         	res.json(nuevoColor)

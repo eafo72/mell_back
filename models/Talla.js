@@ -8,6 +8,10 @@ const sizeSchema = mongoose.Schema(
 			type: String,
 			required: [true,'El nombre es obligatorio']
 		},
+		codigo: {
+			type: String,
+			required: [true,'El código es obligatorio']
+		},
 	
 	},
 	{

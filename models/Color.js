@@ -8,6 +8,10 @@ const colorSchema = mongoose.Schema(
 			type: String,
 			required: [true,'El nombre es obligatorio']
 		},
+		codigo: {
+			type: String,
+			required: [true,'El código es obligatorio']
+		},
 		colorhexa: {
 			type: String,
 			required: [true,'El color en hexadecimal es obligatorio']
