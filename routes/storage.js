@@ -263,6 +263,63 @@ app.get("/entradas/:id", async (req, res) => {
   }
 });
 
+// SINGLE
+app.get("/entrada-single/:id", async (req, res) => {
+	try {
+	  const single = await Entrada.aggregate([
+		{
+			$match: {
+			  _id: ObjectId(req.params.id),
+			},
+		  },
+		  {
+			$lookup: {
+			  from: "productos",
+			  localField: "codigo_producto",
+			  foreignField: "codigo",
+			  as: "datos_producto",
+			},
+		  },
+		  {
+			$unwind: "$datos_producto"
+		  },
+		  {
+			$lookup: {
+			  from: "tallas",
+			  localField: "codigo_talla",
+			  foreignField: "codigo",
+			  as: "datos_talla",
+			},
+		  },
+		  {
+			$unwind: "$datos_talla"
+		  },
+		  {
+			$lookup: {
+			  from: "colors",
+			  localField: "codigo_color",
+			  foreignField: "codigo",
+			  as: "datos_color",
+			},
+		  },
+		  {
+			$unwind: "$datos_color",
+		  },
+	  ]);
+	  res.json({ single });
+	} catch (error) {
+	  res
+		.status(500)
+		.json({
+		  msg:
+			"Hubo un error obteniendo los datos del id " +
+			req.params.id +
+			" error: " +
+			error,
+		});
+	}
+  });
+
 // ALTA DE ENTRADA
 app.post("/entrada-alta", async (req, res) => {
   const {
@@ -328,6 +385,55 @@ app.post("/entrada-alta", async (req, res) => {
     });
   }
 });
+
+// EDITAR
+app.put("/entrada-editar", async (req, res) => {
+	const { 
+		id, producto, talla, color, fechaEntrada, cantidad, cantidadAnterior, proveedor, id_almacen, nombre_almacen, estante
+	 } = req.body;
+  
+	const codigo = producto + "-" + talla + "-" + color;
+
+	try {
+	   //buscamos en stock  PEROOOO TENDRIAMOS QUE BUSCAR EL PRODUCTO ANTERIOR NO EL QUE ESTA LLEGANDO COMO CAMBIO
+	  	const stock_single = await Stock.find({
+		  codigo: codigo,
+		  id_almacen: id_almacen,
+		  estante: estante,
+		});
+	
+	  const oldstock = stock_single[0].stock;
+  
+	  const newstock = oldstock + cantidadAnterior;
+  
+	  //devolvemos lo que descontamos
+	  const updateStock = await Stock.findOneAndUpdate(
+		  {
+			  codigo: codigo,
+			  id_almacen: id_almacen,
+			  estante: estante,
+		  },
+		  {
+			stock:newstock,
+		  },
+		  { new: true }
+		);
+		
+	  //descontar el nuevo producto dl stock
+	  		  
+	  //update de la entrada
+	  
+
+
+
+
+  
+	} catch (error) {
+	  res.status(500).json({
+		msg: "Hubo un error borrando la entrada de almacén "+error,
+	  });
+	}
+  });
 
 // BORRAR
 app.post("/entrada-borrar", async (req, res) => {

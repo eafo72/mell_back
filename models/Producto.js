@@ -61,7 +61,7 @@ const productSchema = mongoose.Schema(
 			required: false,
 		}, 
 		precio: {
-			type: String,
+			type: Number,
 			required: false,
 		}, 
 		calificacion: {
