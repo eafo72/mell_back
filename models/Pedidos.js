@@ -8,6 +8,10 @@ const orderSchema = mongoose.Schema(
 			type: String,
 			required: true
 		},
+		tipo_venta: {
+			type: String,
+			required: true
+		},
         subtotal: {
 			type: Number,
             required: true
@@ -31,11 +35,14 @@ const orderSchema = mongoose.Schema(
         correo: {
 			type: String
 		},
+		entregar_a: {
+			type: String
+		},
         direccion_entrega: {
 			type: String
 		},
         costo_envio: {
-			type: String
+			type: Number
 		},
         telefono: {
 			type: String
@@ -52,10 +59,13 @@ const orderSchema = mongoose.Schema(
         fecha: {
 			type: String
 		},
-        tipo_pago: {
+		forma_entrega: {
 			type: String
 		},
-        numero_parcialidades: {
+        forma_pago: {
+			type: String
+		},
+        num_parcialidades: {
 			type: Number
 		},
         parcialidades: {

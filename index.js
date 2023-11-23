@@ -33,7 +33,7 @@ app.use('/talla', sizeRoutes)
 app.use('/color', colorRoutes)
 app.use('/proveedor', supplierRoutes)
 app.use('/almacen', storageRoutes)
-app.use('/pedidos', orderRoutes)
+app.use('/pedido', orderRoutes)
 app.use('/codigo', codeRoutes)
 
 

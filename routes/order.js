@@ -9,11 +9,29 @@ const auth = require('../middlewares/authorization')
 // LISTA
 app.get('/obtener', async (req, res) => {
 	try {
-		const pedidos = await Pedidos.find({})
+		const pedidos = await Pedidos.find({},
+			{
+				tipo_venta:1,
+				fecha:1,
+				forma_entrega:1,
+				estatus_envio:1,
+				num_parcialidades:1,
+				total_parcialidades: {
+				  $sum: "$parcialidades.importe"
+				},
+				descripcion:1,
+				estatus_pago:1,
+				subtotal:1,
+				descuento:1,
+				iva:1,
+				total:1
+			}
+		)
+
         res.json({pedidos})
 
 	} catch (error) {
-		res.status(500).json({ msg: 'Hubo un error obteniendo los datos' })
+		res.status(500).json({ msg: 'Hubo un error obteniendo los datos '+error })
 	}
 })
 
@@ -35,45 +53,60 @@ app.get('/single/:id', async (req, res) => {
 // CREAR
 app.post('/crear', async (req, res) => {
 	const { 
-		usuario,
-		subtotal,
-		descuento,
-		iva,
-		total,
-		descripcion,
-		correo,
-		direccion_entrega,
+		tipo_venta,
+        subtotal,
+        descuento,
+        iva,
+        total,
+        descripcion,
+        usuario,
+        correo,
+		entregar_a,
+        direccion_entrega,
 		costo_envio,
-		telefono,
-		estatus_pago,
-		estatus_envio,
-		vendedor,
-		fecha,
-		tipo_pago,
-		numero_parcialidades,
-		parcialidades
+        telefono,
+        estatus_pago,
+        estatus_envio,
+        vendedor,
+		forma_entrega,
+        forma_pago,
+        num_parcialidades,
+        parcialidades
 	} = req.body 
+
+	let today = new Date();
+    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(); 
+
+	let array_parcialidades = [];
+	if(num_parcialidades == 1){
+		array_parcialidades = [{"fecha":date,"importe":total}];
+	}else{
+		array_parcialidades = [{"fecha":date,"importe":parcialidades}];
+	}	
 
 	try {
 
 		const nuevoPedido = await Pedidos.create({
 			usuario,
+			tipo_venta,
 			subtotal,
 			descuento,
 			iva,
 			total,
 			descripcion,
 			correo,
+			entregar_a,
 			direccion_entrega,
 			costo_envio,
 			telefono,
 			estatus_pago,
 			estatus_envio,
 			vendedor,
-			fecha,
-			tipo_pago,
-			numero_parcialidades,
-			parcialidades
+			fecha:date,
+			forma_entrega,
+			forma_pago,
+			num_parcialidades,
+			parcialidades:array_parcialidades
 		})
         res.json(nuevoPedido)
 
@@ -88,46 +121,13 @@ app.post('/crear', async (req, res) => {
 // ACTUALIZAR
 app.put('/actualizar', async (req, res) => {
     const { 
-		id,
-		usuario,
-		subtotal,
-		descuento,
-		iva,
-		total,
-		descripcion,
-		correo,
-		direccion_entrega,
-		costo_envio,
-		telefono,
-		estatus_pago,
-		estatus_envio,
-		vendedor,
-		fecha,
-		tipo_pago,
-		numero_parcialidades,
-		parcialidades
+		
 	 } = req.body 
 	try {
 
 
 		const updatePedido = await Pedidos.findByIdAndUpdate(id,{
-			usuario,
-			subtotal,
-			descuento,
-			iva,
-			total,
-			descripcion,
-			correo,
-			direccion_entrega,
-			costo_envio,
-			telefono,
-			estatus_pago,
-			estatus_envio,
-			vendedor,
-			fecha,
-			tipo_pago,
-			numero_parcialidades,
-			parcialidades
+			
 		},{new:true})
 
 		res.json({updatePedido})
@@ -152,6 +152,53 @@ app.post('/borrar', async (req, res) => {
 		res.status(500).json({
 			msg: 'Hubo un error borrando el Pedido',
 		})
+	}
+})
+
+
+app.put('/abonar', async (req, res) => {
+    const { 
+		id,
+		cantidad
+	 } = req.body 
+	try {
+
+		const single = await Pedidos.findById(id)
+		const new_parcialidades = single.parcialidades;
+
+		let today = new Date();
+    	let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(); 
+
+		new_parcialidades.push({"fecha":date ,"importe":parseFloat(cantidad)});
+
+		const updatePedido = await Pedidos.findByIdAndUpdate(id,{
+			parcialidades:new_parcialidades
+			
+		},{new:true})
+
+		res.json({updatePedido})
+
+		
+
+	} catch (error) {
+		res.status(500).json({
+			msg: 'Hubo un error actualizando el Pedido',
+		})
+	}
+})
+
+app.get('/ventas', async (req, res) => {
+	try {
+		const ventas = await Pedidos.find({},
+			{
+				descripcion:1,
+			}
+		)
+
+        res.json({ventas})
+
+	} catch (error) {
+		res.status(500).json({ msg: 'Hubo un error obteniendo los datos '+error })
 	}
 })
 
