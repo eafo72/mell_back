@@ -191,8 +191,10 @@ app.get('/ventas', async (req, res) => {
 	try {
 		const ventas = await Pedidos.find({},
 			{
+				fecha:1,
 				descripcion:1,
-			}
+			},
+			
 		)
 
         res.json({ventas})
