@@ -24,7 +24,12 @@ app.get("/obtener", async (req, res) => {
 app.get("/single/:id", async (req, res) => {
   try {
     const single = await Producto.findById(req.params.id);
-    res.json({ single });
+    const categoria = single.categoria;
+
+    const related_products = await Producto.find({categoria: categoria}).limit(5);
+
+    res.json({ single, related_products });
+
   } catch (error) {
     res
       .status(500)
