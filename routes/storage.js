@@ -5,6 +5,7 @@ const Almacen = require("../models/Almacen");
 const Entrada = require("../models/Entrada");
 const Producto = require("../models/Producto");
 const Stock = require("../models/Stock");
+const Apartado = require("../models/Apartado");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const auth = require("../middlewares/authorization");
@@ -165,13 +166,52 @@ app.get("/stock/:id", async (req, res) => {
 });
 
 // APARTADOS
-app.get("/apartados/:id", async (req, res) => {
+app.get("/apartado/:id", async (req, res) => {
   try {
-    const apartados = await Producto.find({
-      almacen: { $elemMatch: { id_almacen: req.params.id } },
-      almacen: { $elemMatch: { apartado: { $gt: 0 } } },
-    });
-    res.json({ apartados });
+    
+    const apartado = await Apartado.aggregate([
+      {
+        $match: {
+          id_almacen: ObjectId(req.params.id),
+        },
+      },
+      {
+        $lookup: {
+          from: "productos",
+          localField: "codigo_producto",
+          foreignField: "codigo",
+          as: "datos_producto",
+        },
+      },
+	  {
+        $unwind: "$datos_producto"
+      },
+      {
+        $lookup: {
+          from: "tallas",
+          localField: "codigo_talla",
+          foreignField: "codigo",
+          as: "datos_talla",
+        },
+      },
+	  {
+        $unwind: "$datos_talla"
+      },
+      {
+        $lookup: {
+          from: "colors",
+          localField: "codigo_color",
+          foreignField: "codigo",
+          as: "datos_color",
+        },
+      },
+      {
+        $unwind: "$datos_color",
+      },
+    ]);
+
+    res.json({ apartado });
+
   } catch (error) {
     res
       .status(500)
@@ -185,7 +225,8 @@ app.get("/apartados/:id", async (req, res) => {
   }
 });
 
-// APARTADOS
+
+// ESTROPEADOS
 app.get("/estropeados/:id", async (req, res) => {
   try {
     const estropeados = await Producto.find({

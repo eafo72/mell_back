@@ -2,6 +2,8 @@
 const express = require('express')
 const app = express.Router()
 const Pedidos = require('../models/Pedidos') // NUESTRO MODELO PARA PERMITIR GENERAR O MODIFICAR USUARIOS CON LA BASE DE DATOS
+const Stock = require('../models/Stock')
+const Apartado = require('../models/Apartado')
 const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const auth = require('../middlewares/authorization')
@@ -86,6 +88,34 @@ app.post('/crear', async (req, res) => {
 
 	try {
 
+
+		//primero revisamos si hay existencia de cada producto
+		for(let i=0; i < descripcion.length; i++){
+
+			//primer filtro si existe el codigo y hay stock pero sin considerar aun los apartados			
+			const ifAvailableOne = await Stock.find({ codigo: descripcion[i]['codigo'], stock: {$gte : descripcion[i]['cantidad'] } });
+			  
+			if (ifAvailableOne.length == 0) {
+			  	res.status(500).json({
+					msg: "El producto " + descripcion[i]['codigo'] + " no tiene el stock necesario para este pedido",
+				});
+				return;
+			}
+
+			//aqui faltaria que recorriera todo el arreglo de productos ya que puede haber en varios almacenes
+			//segundo filtro calcular stock - apartado y ver si alcanza
+			const calculo = (ifAvailableOne[0].stock - ifAvailableOne[0].apartado) -  descripcion[i]['cantidad'];
+			
+			  
+			if (calculo < 0) {
+			  	res.status(500).json({
+					msg: "El producto " + descripcion[i]['codigo'] + " no tiene el stock necesario para este pedido",
+				});
+				return;
+			}
+		}
+
+
 		const nuevoPedido = await Pedidos.create({
 			usuario,
 			tipo_venta,
@@ -108,7 +138,44 @@ app.post('/crear', async (req, res) => {
 			num_parcialidades,
 			parcialidades:array_parcialidades
 		})
-        res.json(nuevoPedido)
+        
+		const id_pedido = nuevoPedido._id;
+
+
+		//apartamos cada producto
+		for(let i=0; i < descripcion.length; i++){
+
+			//buscamos en stock  
+			const stock_single = await Stock.find({ codigo: descripcion[i]['codigo'], stock: {$gte : descripcion[i]['cantidad'] } });
+		  
+
+			const id_almacen  = stock_single[0].id_almacen;
+			const estante  = stock_single[0].estante;
+			const idoldapartado  = stock_single[0]._id;
+			const oldapartado = stock_single[0].apartado;
+			const newapartado = oldapartado + descripcion[i]['cantidad'];
+
+			//actualizamos apartados
+			const updateStock = await Stock.findByIdAndUpdate(idoldapartado,{
+				apartado:newapartado
+			},{new:true});
+
+			//creamos registro de apartado
+			const nuevoApartado = await Apartado.create({
+				id_almacen,
+				id_pedido,
+				estante,
+				codigo_producto:descripcion[i]['codigo_producto'],
+				codigo_talla:descripcion[i]['codigo_talla'],
+				codigo_color:descripcion[i]['codigo_color'],
+				codigo:descripcion[i]['codigo'],
+				apartado:descripcion[i]['cantidad']
+			})
+		
+		}	
+
+		res.json(nuevoPedido)
+		
 
 		
 	} catch (error) {
