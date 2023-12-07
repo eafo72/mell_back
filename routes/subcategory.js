@@ -37,12 +37,12 @@ app.post('/crear', async (req, res) => {
 	const { categoria, nombre, imagen} = req.body 
 
 	try {
-		const ifExist = await Subcategoria.find( { nombre: nombre } )
+		const ifExist = await Subcategoria.find( { nombre: nombre, categoria:categoria } )
 
 		if(ifExist.length > 0){
 
 			res.status(500).json({
-				msg: 'La subcategoría '+nombre+' ya existe',
+				msg: 'La combinación de la subcategoría '+nombre+' y la categoría '+categoria+' ya existe',
 			})	
 
 		}else{
