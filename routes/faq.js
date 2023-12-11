@@ -59,9 +59,7 @@ app.post("/crear", async (req, res) => {
 app.put("/actualizar", async (req, res) => {
   const { id, pregunta, respuesta } = req.body;
 
-  
-
-	try {
+  try {
 	
 		  const updateFaq = await Faq.findByIdAndUpdate(
 			id,
