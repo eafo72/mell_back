@@ -12,6 +12,7 @@ const supplierRoutes = require('./routes/supplier')
 const storageRoutes = require('./routes/storage')
 const orderRoutes = require('./routes/order')
 const codeRoutes = require('./routes/code')
+const faqRoutes = require('./routes/faq')
 
 const cors = require('cors')
 const connectDB = require('./config/db')
@@ -35,6 +36,7 @@ app.use('/proveedor', supplierRoutes)
 app.use('/almacen', storageRoutes)
 app.use('/pedido', orderRoutes)
 app.use('/codigo', codeRoutes)
+app.use('/faq', faqRoutes)
 
 
 app.get('/', (req, res) => res.send('MELL API'))
