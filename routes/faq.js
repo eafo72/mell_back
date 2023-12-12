@@ -57,7 +57,12 @@ app.post("/crear", async (req, res) => {
 
 // ACTUALIZAR
 app.put("/actualizar", async (req, res) => {
+  
   const { id, pregunta, respuesta } = req.body;
+
+   console.log(id); 
+   console.log(pregunta); 
+   console.log(respuesta); 
 
   try {
 	

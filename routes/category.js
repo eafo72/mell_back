@@ -20,6 +20,15 @@ app.get("/obtener", async (req, res) => {
   }
 });
 
+app.get("/obtenerSeis", async (req, res) => {
+  try {
+    const categorias = await Categoria.find({}).limit(6);
+    res.json({ categorias });
+  } catch (error) {
+    res.status(500).json({ msg: "Hubo un error obteniendo los datos" });
+  }
+});
+
 // SINGLE
 app.get("/single/:id", async (req, res) => {
   try {
