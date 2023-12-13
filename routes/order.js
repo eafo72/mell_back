@@ -7,6 +7,7 @@ const Apartado = require('../models/Apartado')
 const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const auth = require('../middlewares/authorization')
+const mailer = require('../controller/mailController')
 
 // LISTA
 app.get('/obtener', async (req, res) => {
@@ -175,6 +176,53 @@ app.post('/crear', async (req, res) => {
 		}	
 
 		res.json(nuevoPedido)
+
+
+		//mandamos correo a mell y al cliente
+		let details = "";
+		for(let i=0; i < descripcion.length; i++){
+			details += `<p>${descripcion[i]['nombre_producto']} ${descripcion[i]['cantidad']}  $ ${descripcion[i]['precio']}  $ ${descripcion[i]['total']}</p>`;
+		}
+		
+
+		const messageToMell = {
+			from: process.env.MAIL, // sender address
+			to: process.env.MAIL, // list of receivers
+			subject: "Un cliente ha realizado una compra", // Subject line
+			text: "", // plain text body
+			html: `<p><strong>Fecha: <strong>${date}</p>
+			       <p><strong>Forma de entrega: <strong>${forma_entrega}</p>
+				   <p><strong>Entregar a: <strong>${entregar_a}</p>
+				   <p><strong>Dirección: <strong> ${direccion_entrega}</p>
+				   <p><strong>Teléfono: <strong> ${telefono}</p>
+				   <p><strong>Correo: <strong> ${correo}</p>
+				   <p><strong>Subtotal: <strong> ${subtotal}</p>
+				   <p><strong>Descuento: <strong> ${descuento}</p>
+				   <p><strong>I.V.A: <strong> ${iva}</p>
+				   <p><strong>Total: <strong> ${total}</p>
+				   <p><strong>Descripcion: <strong> ${details}</p>`, // html body
+		}
+
+		const messageToClient = {
+			from: process.env.MAIL, // sender address
+			to: correo, // list of receivers
+			subject: "Estamos preparando tu pedido", // Subject line
+			text: "", // plain text body
+			html: `<p><strong>Fecha: <strong>${date}</p>
+			       <p><strong>Forma de entrega: <strong>${forma_entrega}</p>
+				   <p><strong>Entregar a: <strong>${entregar_a}</p>
+				   <p><strong>Dirección: <strong> ${direccion_entrega}</p>
+				   <p><strong>Teléfono: <strong> ${telefono}</p>
+				   <p><strong>Correo: <strong> ${correo}</p>
+				   <p><strong>Subtotal: <strong> ${subtotal}</p>
+				   <p><strong>Descuento: <strong> ${descuento}</p>
+				   <p><strong>I.V.A: <strong> ${iva}</p>
+				   <p><strong>Total: <strong> ${total}</p>
+				   <p><strong>Descripcion: <strong> ${details}</p>`, // html body
+		}
+
+		await mailer.sendMail(messageToMell);
+		await mailer.sendMail(messageToClient);
 		
 
 		
