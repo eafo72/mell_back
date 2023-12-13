@@ -3,6 +3,7 @@ const express = require("express");
 const app = express.Router();
 const Almacen = require("../models/Almacen");
 const Entrada = require("../models/Entrada");
+const Salida = require("../models/Salida");
 const Producto = require("../models/Producto");
 const Stock = require("../models/Stock");
 const Apartado = require("../models/Apartado");
@@ -581,6 +582,175 @@ app.post("/entrada-borrar", async (req, res) => {
     });
   }
 });
+
+
+/////////////////////////////////////////////////// SALIDAS ////////////////////////////////////////////////////////////
+
+// LISTA
+app.get("/salidas/:id", async (req, res) => {
+  
+  try {
+    
+	const salidas = await Salida.aggregate([
+		{
+		  $match: {
+			id_almacen: ObjectId(req.params.id),
+		  },
+		},
+		{
+		  $lookup: {
+			from: "productos",
+			localField: "codigo_producto",
+			foreignField: "codigo",
+			as: "datos_producto",
+		  },
+		},
+		{
+		  $unwind: "$datos_producto"
+		},
+		{
+		  $lookup: {
+			from: "tallas",
+			localField: "codigo_talla",
+			foreignField: "codigo",
+			as: "datos_talla",
+		  },
+		},
+		{
+		  $unwind: "$datos_talla"
+		},
+		{
+		  $lookup: {
+			from: "colors",
+			localField: "codigo_color",
+			foreignField: "codigo",
+			as: "datos_color",
+		  },
+		},
+		{
+		  $unwind: "$datos_color",
+		},
+	  ]);
+  
+	  res.json({ salidas });
+
+
+
+  } catch (error) {
+    res.status(500).json({ msg: "Hubo un error obteniendo los datos" });
+  }
+});
+
+// ALTA DE SALIDA
+app.post("/salida-alta", async (req, res) => {
+  const {
+    id_apartado
+  } = req.body;
+
+  try {
+
+    
+    //buscamos en apartados la info
+    const apartado = await Apartado.find({
+      _id: id_apartado,
+    });
+
+    let today = new Date();
+    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(); 
+
+    const producto = apartado.codigo_producto;
+    const talla = apartado.codigo_talla;
+    const color = apartado.codigo_color;
+    const fechaSalida = date;
+    const cantidad = apartado.apartado;
+    const id_almacen = apartado.id_almacen;
+    const estante = apartado.estante;
+    const id_pedido = apartado.id_pedido;
+
+    const codigo = producto + "-" + talla + "-" + color;
+
+    const single = await Stock.find({
+      codigo: codigo,
+      id_almacen: id_almacen,
+      estante: estante,
+    });
+
+    if (single.length > 0) {
+      const oldstock = single[0].stock;
+      const newstock = oldstock - parseInt(cantidad);
+
+      const oldapartado = single[0].apartado;
+      const newapartado = oldapartado - parseInt(cantidad);
+
+
+      const nuevoStock = await Stock.updateOne(
+        { codigo: codigo, id_almacen: id_almacen, estante: estante },
+        {
+          $set: { stock: newstock, apartado: newapartado },
+          $currentDate: { lastModified: true },
+        }
+      );
+    } else {
+      const nuevoStock = await Stock.create({
+        id_almacen,
+        estante,
+        codigo_producto: producto,
+        codigo_talla: talla,
+        codigo_color: color,
+        codigo,
+        stock: cantidad * (-1),
+        apartado: 0,
+        estropeado: 0,
+      });
+    }
+
+    const nuevaSalidaAlmacen = await Salida.create({
+      codigo,
+	    codigo_producto: producto,
+	    codigo_talla: talla,
+	    codigo_color: color,
+      fechaSalida,
+      cantidad,
+      id_almacen,
+      estante,
+      id_apartado,
+      id_pedido
+    });
+    
+
+    //actualizamos el status del apartado
+    const updateAlmacen = await Apartado.findByIdAndUpdate(
+      id_apartado,
+      {
+        status:"Entregado"
+      },
+      { new: true }
+    );
+
+    res.json({msg: "Datos actualizados"});
+
+  } catch (error) {
+    res.status(500).json({
+      msg: "Hubo un error guardando los datos" + error,
+    });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //////////////////////////////////////////////////////////////// ESTANTES  ///////////////////////////////////////////////////////////////////////////
 // Alta
