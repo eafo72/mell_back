@@ -727,7 +727,7 @@ app.post("/salida-alta", async (req, res) => {
       { new: true }
     );
 
-    res.json({msg: "Datos actualizados"});
+    res.json(updateAlmacen);
 
   } catch (error) {
     res.status(500).json({
