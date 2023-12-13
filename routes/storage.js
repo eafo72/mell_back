@@ -165,7 +165,7 @@ app.get("/stock/:id", async (req, res) => {
   }
 });
 
-// APARTADOS
+// APARTADOS (TODOS)
 app.get("/apartado/:id", async (req, res) => {
   try {
     
@@ -225,6 +225,66 @@ app.get("/apartado/:id", async (req, res) => {
   }
 });
 
+// APARTADOS (solo los que no se han procesado)
+app.get("/apartadoOrdenDia/:id", async (req, res) => {
+  try {
+    
+    const apartadoOrdenDia = await Apartado.aggregate([
+      {
+        $match: {
+          id_almacen: ObjectId(req.params.id),
+          status:""
+        },
+      },
+      {
+        $lookup: {
+          from: "productos",
+          localField: "codigo_producto",
+          foreignField: "codigo",
+          as: "datos_producto",
+        },
+      },
+	  {
+        $unwind: "$datos_producto"
+      },
+      {
+        $lookup: {
+          from: "tallas",
+          localField: "codigo_talla",
+          foreignField: "codigo",
+          as: "datos_talla",
+        },
+      },
+	  {
+        $unwind: "$datos_talla"
+      },
+      {
+        $lookup: {
+          from: "colors",
+          localField: "codigo_color",
+          foreignField: "codigo",
+          as: "datos_color",
+        },
+      },
+      {
+        $unwind: "$datos_color",
+      },
+    ]);
+
+    res.json({ apartadoOrdenDia });
+
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        msg:
+          "Hubo un error obteniendo los datos del id " +
+          req.params.id +
+          " error: " +
+          error,
+      });
+  }
+});
 
 // ESTROPEADOS
 app.get("/estropeados/:id", async (req, res) => {

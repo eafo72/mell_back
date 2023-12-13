@@ -35,6 +35,9 @@ const apartadoSchema = mongoose.Schema(
 		apartado: {
 			type: Number
 		},
+		status: {
+			type: String
+		},
 	},
 	{
 		timestamps: true, 
