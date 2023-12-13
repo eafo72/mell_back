@@ -176,7 +176,7 @@ app.post('/crear', async (req, res) => {
 		
 		}	
 
-		res.json(nuevoPedido)
+		
 
 
 		//mandamos correo a mell y al cliente
@@ -226,6 +226,7 @@ app.post('/crear', async (req, res) => {
 		await mailer.sendMail(messageToClient);
 		
 
+		res.json(nuevoPedido)
 		
 	} catch (error) {
 		res.status(500).json({
