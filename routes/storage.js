@@ -233,7 +233,7 @@ app.get("/apartadoOrdenDia/:id", async (req, res) => {
       {
         $match: {
           id_almacen: ObjectId(req.params.id),
-          status:""
+          status:"Pendiente"
         },
       },
       {
