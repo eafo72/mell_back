@@ -658,14 +658,14 @@ app.post("/salida-alta", async (req, res) => {
     let today = new Date();
     let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(); 
 
-    const producto = apartado.codigo_producto;
-    const talla = apartado.codigo_talla;
-    const color = apartado.codigo_color;
+    const producto = apartado[0].codigo_producto;
+    const talla = apartado[0].codigo_talla;
+    const color = apartado[0].codigo_color;
     const fechaSalida = date;
-    const cantidad = apartado.apartado;
-    const id_almacen = apartado.id_almacen;
-    const estante = apartado.estante;
-    const id_pedido = apartado.id_pedido;
+    const cantidad = apartado[0].apartado;
+    const id_almacen = apartado[0].id_almacen;
+    const estante = apartado[0].estante;
+    const id_pedido = apartado[0].id_pedido;
 
     const codigo = producto + "-" + talla + "-" + color;
 
