@@ -170,7 +170,8 @@ app.post('/crear', async (req, res) => {
 				codigo_talla:descripcion[i]['codigo_talla'],
 				codigo_color:descripcion[i]['codigo_color'],
 				codigo:descripcion[i]['codigo'],
-				apartado:descripcion[i]['cantidad']
+				apartado:descripcion[i]['cantidad'],
+				status:"Pendiente"
 			})
 		
 		}	
