@@ -176,10 +176,10 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
 
         //actualizamos el nombre de la categoria en productos que tengan esta categoria
         await Producto.update(
-          { nombre:oldname },
+          { categoria:oldname },
           {
             $set: {
-              nombre: nombre
+              categoria: nombre
             }
           },
           { multi: true }
@@ -187,10 +187,10 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
         
         //actualizamos el nombre de la categoria en subcategorias que tengan esta categoria
         await Subcategoria.update(
-          { nombre:oldname },
+          { categoria:oldname },
           {
             $set: {
-              nombre: nombre
+              categoria: nombre
             }
           },
           { multi: true }
@@ -240,10 +240,10 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
 
           //actualizamos el nombre de la categoria en productos que tengan esta categoria
           await Producto.update(
-            { nombre:oldname },
+            { categoria:oldname },
             {
               $set: {
-               nombre: nombre
+               categoria: nombre
               }
             },
             { multi: true }
@@ -251,10 +251,10 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
         
           //actualizamos el nombre de la categoria en subcategorias que tengan esta categoria
           await Subcategoria.update(
-            { nombre:oldname },
+            { categoria:oldname },
             {
               $set: {
-                nombre: nombre
+                categoria: nombre
               }
             },
             { multi: true }
