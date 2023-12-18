@@ -202,7 +202,7 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
 		}
 	  } catch (error) {
 		res.status(500).json({
-		  msg: "Hubo un error actualizando la Categoría",
+		  msg: "Hubo un error actualizando la Categoría "+error,
 		});
 	  }
 
@@ -265,7 +265,7 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
       }
     } catch (error) {
       res.status(500).json({
-        msg: "Hubo un error actualizando la Categoría",
+        msg: "Hubo un error actualizando la Categoría " + error,
       });
     }
   }
