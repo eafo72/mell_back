@@ -160,8 +160,7 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
       //buscamos el nombre actual de la categoria antes de guardar los cambios
       const single = await Categoria.findById(id);
       const oldname = single.nombre;
-
-
+      
 		  const updateCategoria = await Categoria.findByIdAndUpdate(
 			id,
 			{
@@ -173,6 +172,7 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
 
       //revisamos si cambio el nombre de la categoria
       if(oldname != nombre){
+        
 
         //actualizamos el nombre de la categoria en productos que tengan esta categoria
         await Producto.update(
@@ -225,6 +225,7 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
         //buscamos el nombre actual de la categoria antes de guardar los cambios
         const single = await Categoria.findById(id);
         const oldname = single.nombre;
+        
 
         const updateCategoria = await Categoria.findByIdAndUpdate(
           id,
@@ -237,6 +238,7 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
 
         //revisamos si cambio el nombre de la categoria
         if(oldname != nombre){
+          
 
           //actualizamos el nombre de la categoria en productos que tengan esta categoria
           await Producto.update(
