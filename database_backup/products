@@ -1,0 +1,3371 @@
+[
+  {
+    "_id": "657101d825918a8fd746729f",
+    "codigo": "001",
+    "nombre": "Jumper glitter plateado",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "Valentina",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      },
+      {
+        "value": "005",
+        "label": "M//L"
+      }
+    ],
+    "color": [
+      {
+        "value": "039",
+        "label": "Plateado",
+        "colorhexa": "#d4d4d4"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-6-ejemplo.jpg",
+    "fotos_carrusel": [
+      {
+        "image": "https://www.agencianuba.com/mell_front_images/productos/2023-12-15-19105.jpg"
+      },
+      {
+        "image": "https://www.agencianuba.com/mell_front_images/productos/2023-12-15-19105.jpg"
+      }
+    ],
+    "estatus": "Activo",
+    "precio": 389,
+    "calificacion": [],
+    "createdAt": "2023-12-06T23:20:56.648Z",
+    "updatedAt": "2023-12-15T21:58:21.396Z",
+    "__v": 0
+  },
+  {
+    "_id": "6571044825918a8fd74672dd",
+    "codigo": "EN10#",
+    "nombre": "Jumper glitter dorado",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "Valentina",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      },
+      {
+        "value": "005",
+        "label": "M//L"
+      }
+    ],
+    "color": [
+      {
+        "value": "038",
+        "label": "dorado",
+        "colorhexa": "#df9901"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-6-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 389,
+    "calificacion": [],
+    "createdAt": "2023-12-06T23:31:20.744Z",
+    "updatedAt": "2023-12-06T23:31:20.744Z",
+    "__v": 0
+  },
+  {
+    "_id": "6571057f25918a8fd74672ec",
+    "codigo": "EN11#",
+    "nombre": "Jumper glitter azul rey",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "Valentina",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      }
+    ],
+    "color": [
+      {
+        "value": "021",
+        "label": "Azul Marino",
+        "colorhexa": "#0e2c53"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-6-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 389,
+    "calificacion": [],
+    "createdAt": "2023-12-06T23:36:31.684Z",
+    "updatedAt": "2023-12-06T23:36:31.684Z",
+    "__v": 0
+  },
+  {
+    "_id": "657105de25918a8fd74672f7",
+    "codigo": "EN12#",
+    "nombre": "Jumper glitter verde botella ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "Valentina",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      }
+    ],
+    "color": [
+      {
+        "value": "003",
+        "label": "Verde Botella",
+        "colorhexa": "#033a04"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-6-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 389,
+    "calificacion": [],
+    "createdAt": "2023-12-06T23:38:06.025Z",
+    "updatedAt": "2023-12-06T23:38:06.025Z",
+    "__v": 0
+  },
+  {
+    "_id": "6571063a25918a8fd7467302",
+    "codigo": "EN13#",
+    "nombre": "Jumper glitter azul cielo",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "Valentina",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      }
+    ],
+    "color": [
+      {
+        "value": "019",
+        "label": "Azul cielo",
+        "colorhexa": "#32bdec"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-6-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 389,
+    "calificacion": [],
+    "createdAt": "2023-12-06T23:39:38.782Z",
+    "updatedAt": "2023-12-06T23:39:38.782Z",
+    "__v": 0
+  },
+  {
+    "_id": "6571080c25918a8fd7467333",
+    "codigo": "T13550",
+    "nombre": "Blusa agujeta ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Casual",
+    "marca": "Active Usa",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "010",
+        "label": "Rosa",
+        "colorhexa": "#ec22a2"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-6-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 275,
+    "calificacion": [],
+    "createdAt": "2023-12-06T23:47:24.528Z",
+    "updatedAt": "2023-12-06T23:47:24.528Z",
+    "__v": 0
+  },
+  {
+    "_id": "657108b725918a8fd7467343",
+    "codigo": "T13551",
+    "nombre": "Blusa agujeta turquesa",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Casual",
+    "marca": "Active Usa",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      },
+      {
+        "value": "002",
+        "label": "Mediana"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "027",
+        "label": "Turquesa",
+        "colorhexa": "#00bbfa"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-6-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 275,
+    "calificacion": [],
+    "createdAt": "2023-12-06T23:50:15.784Z",
+    "updatedAt": "2023-12-06T23:50:15.784Z",
+    "__v": 0
+  },
+  {
+    "_id": "6571094e25918a8fd746734e",
+    "codigo": "WN9906",
+    "nombre": "Basica Rayas ",
+    "descripcion": "WN9906",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Basicas",
+    "marca": "Timing",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "028",
+        "label": "Blanco",
+        "colorhexa": "#fcfcfc"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-6-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 230,
+    "calificacion": [],
+    "createdAt": "2023-12-06T23:52:46.846Z",
+    "updatedAt": "2023-12-06T23:54:11.295Z",
+    "__v": 0
+  },
+  {
+    "_id": "65710a6625918a8fd7467387",
+    "codigo": "WN9907",
+    "nombre": "Basica Rayas fucsia",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Basicas",
+    "marca": "Timing",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      },
+      {
+        "value": "002",
+        "label": "Mediana"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "018",
+        "label": "Fucsia",
+        "colorhexa": "#d6009d"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-6-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 230,
+    "calificacion": [],
+    "createdAt": "2023-12-06T23:57:26.299Z",
+    "updatedAt": "2023-12-06T23:57:26.299Z",
+    "__v": 0
+  },
+  {
+    "_id": "65710b8125918a8fd7467392",
+    "codigo": "M7636",
+    "nombre": "Jumper rayas rojo",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "OKAY",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      },
+      {
+        "value": "005",
+        "label": "M//L"
+      }
+    ],
+    "color": [
+      {
+        "value": "005",
+        "label": "Rojo",
+        "colorhexa": "#f90606"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 449,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:02:09.362Z",
+    "updatedAt": "2023-12-07T00:02:09.362Z",
+    "__v": 0
+  },
+  {
+    "_id": "65710bce25918a8fd746739d",
+    "codigo": "M7637",
+    "nombre": "Jumper rayas beige",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "OKAY",
+    "talla": [
+      {
+        "value": "005",
+        "label": "M//L"
+      }
+    ],
+    "color": [
+      {
+        "value": "025",
+        "label": "Beige",
+        "colorhexa": "#f0d384"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 449,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:03:26.337Z",
+    "updatedAt": "2023-12-07T00:03:26.337Z",
+    "__v": 0
+  },
+  {
+    "_id": "65710c5725918a8fd74673a8",
+    "codigo": "M7638",
+    "nombre": "Jumper rayas azul",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "OKAY",
+    "talla": [
+      {
+        "value": "005",
+        "label": "M//L"
+      }
+    ],
+    "color": [
+      {
+        "value": "019",
+        "label": "Azul cielo",
+        "colorhexa": "#32bdec"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 449,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:05:43.875Z",
+    "updatedAt": "2023-12-07T00:05:43.875Z",
+    "__v": 0
+  },
+  {
+    "_id": "65710ce925918a8fd74673b3",
+    "codigo": "M7639",
+    "nombre": "Jumper rayas verde",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "OKAY",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      }
+    ],
+    "color": [
+      {
+        "value": "004",
+        "label": "Verde",
+        "colorhexa": "#0c9715"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 449,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:08:09.747Z",
+    "updatedAt": "2023-12-07T00:08:09.747Z",
+    "__v": 0
+  },
+  {
+    "_id": "65710d7825918a8fd74673be",
+    "codigo": "M7640",
+    "nombre": "Jumper rayas rosa ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "OKAY",
+    "talla": [
+      {
+        "value": "005",
+        "label": "M//L"
+      }
+    ],
+    "color": [
+      {
+        "value": "012",
+        "label": "Rosa Pastel",
+        "colorhexa": "#f882ab"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 449,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:10:32.397Z",
+    "updatedAt": "2023-12-07T00:10:32.397Z",
+    "__v": 0
+  },
+  {
+    "_id": "65710dfa25918a8fd74673c9",
+    "codigo": "M7641",
+    "nombre": "Jumper rayas limon",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "OKAY",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      },
+      {
+        "value": "005",
+        "label": "M//L"
+      }
+    ],
+    "color": [
+      {
+        "value": "008",
+        "label": "Limon",
+        "colorhexa": "#10d126"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 450,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:12:42.781Z",
+    "updatedAt": "2023-12-07T00:12:42.781Z",
+    "__v": 0
+  },
+  {
+    "_id": "65710e4725918a8fd74673d4",
+    "codigo": "M7642",
+    "nombre": "Jumper rayas blanco ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "OKAY",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      },
+      {
+        "value": "005",
+        "label": "M//L"
+      }
+    ],
+    "color": [
+      {
+        "value": "028",
+        "label": "Blanco",
+        "colorhexa": "#fcfcfc"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 449,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:13:59.003Z",
+    "updatedAt": "2023-12-07T00:13:59.003Z",
+    "__v": 0
+  },
+  {
+    "_id": "65710ef825918a8fd74673e2",
+    "codigo": "M7643",
+    "nombre": "Jumper rayas lila",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Jumper",
+    "marca": "OKAY",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      }
+    ],
+    "color": [
+      {
+        "value": "006",
+        "label": "Lila",
+        "colorhexa": "#ec8ee9"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 449,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:16:56.291Z",
+    "updatedAt": "2023-12-07T00:16:56.291Z",
+    "__v": 0
+  },
+  {
+    "_id": "65710fec25918a8fd74673f0",
+    "codigo": "MD4419",
+    "nombre": "Vestido largo escote",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Gala",
+    "marca": "Mable",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "038",
+        "label": "dorado",
+        "colorhexa": "#df9901"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 1449,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:21:00.762Z",
+    "updatedAt": "2023-12-07T00:50:29.643Z",
+    "__v": 0
+  },
+  {
+    "_id": "6571119e25918a8fd746741d",
+    "codigo": "HMD12554",
+    "nombre": "Vestido largo negro ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Gala",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 549,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:28:14.392Z",
+    "updatedAt": "2023-12-07T00:55:17.233Z",
+    "__v": 0
+  },
+  {
+    "_id": "657112a625918a8fd7467428",
+    "codigo": " 001",
+    "nombre": "Vestido largo satin dorado",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Gala",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "038",
+        "label": "dorado",
+        "colorhexa": "#df9901"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 699,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:32:38.290Z",
+    "updatedAt": "2023-12-07T00:45:44.874Z",
+    "__v": 0
+  },
+  {
+    "_id": "657113a725918a8fd7467448",
+    "codigo": "MD1780",
+    "nombre": "Vestido largo florecitas",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casuales",
+    "marca": "CHOCOLATE",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "041",
+        "label": "Floral",
+        "colorhexa": "#faf9f9"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 398,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:36:55.623Z",
+    "updatedAt": "2023-12-07T00:40:37.353Z",
+    "__v": 0
+  },
+  {
+    "_id": "6571157825918a8fd7467477",
+    "codigo": "002",
+    "nombre": "Vestido largo azul rey",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Gala",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "020",
+        "label": "Azul Rey",
+        "colorhexa": "#0d0ae6"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 599,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:44:40.322Z",
+    "updatedAt": "2023-12-07T00:44:40.322Z",
+    "__v": 0
+  },
+  {
+    "_id": "6571163825918a8fd74674a6",
+    "codigo": "003",
+    "nombre": "Vestido Satin verde botella ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Gala",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "003",
+        "label": "Verde Botella",
+        "colorhexa": "#033a04"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 499,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:47:52.962Z",
+    "updatedAt": "2023-12-07T00:47:52.962Z",
+    "__v": 0
+  },
+  {
+    "_id": "6571175525918a8fd74674c5",
+    "codigo": "004",
+    "nombre": "Vestido largo lentejuelas",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Gala",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "043",
+        "label": "Bicolor",
+        "colorhexa": "#f4f0f0"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 599,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:52:37.993Z",
+    "updatedAt": "2023-12-07T00:53:27.738Z",
+    "__v": 0
+  },
+  {
+    "_id": "6571184e25918a8fd74674f9",
+    "codigo": "005",
+    "nombre": "Vestido largo escote brillos",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Gala",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "006",
+        "label": "Lila",
+        "colorhexa": "#ec8ee9"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 1000,
+    "calificacion": [],
+    "createdAt": "2023-12-07T00:56:46.863Z",
+    "updatedAt": "2023-12-07T00:57:34.001Z",
+    "__v": 0
+  },
+  {
+    "_id": "6571197025918a8fd7467510",
+    "codigo": "3698RY",
+    "nombre": "Palazzo verde  oversize ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Casual",
+    "marca": "Love tree",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "002",
+        "label": "Verde Sage",
+        "colorhexa": "#8de29e"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 399,
+    "calificacion": [],
+    "createdAt": "2023-12-07T01:01:36.551Z",
+    "updatedAt": "2023-12-07T01:01:36.551Z",
+    "__v": 0
+  },
+  {
+    "_id": "65711a5725918a8fd746751b",
+    "codigo": "23001",
+    "nombre": "Palazzo rayas fiucsa",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Casual",
+    "marca": "Hera",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      }
+    ],
+    "color": [
+      {
+        "value": "018",
+        "label": "Fucsia",
+        "colorhexa": "#d6009d"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 599,
+    "calificacion": [],
+    "createdAt": "2023-12-07T01:05:27.946Z",
+    "updatedAt": "2023-12-07T01:06:04.443Z",
+    "__v": 0
+  },
+  {
+    "_id": "65711b2a25918a8fd746753b",
+    "codigo": "JR49566",
+    "nombre": "Palazzo copas ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Casual",
+    "marca": "Heart Hips",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "018",
+        "label": "Fucsia",
+        "colorhexa": "#d6009d"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 389,
+    "calificacion": [],
+    "createdAt": "2023-12-07T01:08:58.523Z",
+    "updatedAt": "2023-12-07T01:08:58.523Z",
+    "__v": 0
+  },
+  {
+    "_id": "65711bbc25918a8fd7467546",
+    "codigo": "HMP40558",
+    "nombre": "Palazzo rayas escote x",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Casual",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "023",
+        "label": "Naranja",
+        "colorhexa": "#e74008"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 415,
+    "calificacion": [],
+    "createdAt": "2023-12-07T01:11:24.967Z",
+    "updatedAt": "2023-12-07T01:11:24.967Z",
+    "__v": 0
+  },
+  {
+    "_id": "65711c3625918a8fd7467551",
+    "codigo": "22995",
+    "nombre": "Palazzo botones ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Casual",
+    "marca": "Hera",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "004",
+        "label": "Verde",
+        "colorhexa": "#0c9715"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-7-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 599,
+    "calificacion": [],
+    "createdAt": "2023-12-07T01:13:26.704Z",
+    "updatedAt": "2023-12-07T01:13:26.704Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578cde90e2468c721652320",
+    "codigo": "LR48507",
+    "nombre": "Palazzo blanco playero",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Playa",
+    "subcategoria": "Palazzos",
+    "marca": "Heart Hips",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      },
+      {
+        "value": "002",
+        "label": "Mediana"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "028",
+        "label": "Blanco",
+        "colorhexa": "#fcfcfc"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 350,
+    "calificacion": [],
+    "createdAt": "2023-12-12T21:17:29.720Z",
+    "updatedAt": "2023-12-12T21:17:29.720Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578ce860e2468c72165232b",
+    "codigo": "IP6855-L",
+    "nombre": "Palazzo mezclilla ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Palazzos",
+    "marca": "Iris",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "031",
+        "label": "Mezclilla Medio",
+        "colorhexa": "#364a78"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 579,
+    "calificacion": [],
+    "createdAt": "2023-12-12T21:20:06.498Z",
+    "updatedAt": "2023-12-12T21:20:06.498Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578cfdd0e2468c721652337",
+    "codigo": "007",
+    "nombre": "Salida de baño",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Playa",
+    "subcategoria": "Kimono",
+    "marca": "Jera",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "028",
+        "label": "Blanco",
+        "colorhexa": "#fcfcfc"
+      },
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 295,
+    "calificacion": [],
+    "createdAt": "2023-12-12T21:25:49.647Z",
+    "updatedAt": "2023-12-12T21:36:38.104Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578d2280e2468c721652343",
+    "codigo": "008 ",
+    "nombre": "Salida de baño floral",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Playa",
+    "subcategoria": "Kimono",
+    "marca": "Jera",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "041",
+        "label": "Floral",
+        "colorhexa": "#faf9f9"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 295,
+    "calificacion": [],
+    "createdAt": "2023-12-12T21:35:36.030Z",
+    "updatedAt": "2023-12-12T21:36:21.833Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578d2d00e2468c721652375",
+    "codigo": "009",
+    "nombre": "Salida de baño floral 2",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Playa",
+    "subcategoria": "Kimono",
+    "marca": "Jera",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "041",
+        "label": "Floral",
+        "colorhexa": "#faf9f9"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 295,
+    "calificacion": [],
+    "createdAt": "2023-12-12T21:38:24.333Z",
+    "updatedAt": "2023-12-12T21:38:24.333Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578d31d0e2468c721652381",
+    "codigo": "010",
+    "nombre": "Salida de baño floral 3",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Playa",
+    "subcategoria": "Kimono",
+    "marca": "Jera",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "041",
+        "label": "Floral",
+        "colorhexa": "#faf9f9"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 285,
+    "calificacion": [],
+    "createdAt": "2023-12-12T21:39:41.304Z",
+    "updatedAt": "2023-12-12T21:39:41.304Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578d4440e2468c72165238c",
+    "codigo": "011",
+    "nombre": "Palazzo lentejuela",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Formales",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "043",
+        "label": "Bicolor",
+        "colorhexa": "#f4f0f0"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 299,
+    "calificacion": [],
+    "createdAt": "2023-12-12T21:44:36.278Z",
+    "updatedAt": "2023-12-12T21:44:36.278Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578d5a30e2468c721652397",
+    "codigo": "354800",
+    "nombre": "Vestido tropical",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Formales",
+    "marca": "Milk & Honey",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      },
+      {
+        "value": "002",
+        "label": "Mediana"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "019",
+        "label": "Azul cielo",
+        "colorhexa": "#32bdec"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 399,
+    "calificacion": [],
+    "createdAt": "2023-12-12T21:50:27.044Z",
+    "updatedAt": "2023-12-12T21:50:27.044Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578d84b0e2468c7216523a5",
+    "codigo": "012",
+    "nombre": "Vestido hawai",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      }
+    ],
+    "color": [
+      {
+        "value": "045",
+        "label": "Magenta",
+        "colorhexa": "#9c266b"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 387,
+    "calificacion": [],
+    "createdAt": "2023-12-12T22:01:47.682Z",
+    "updatedAt": "2023-12-13T18:04:53.906Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578da870e2468c7216523d1",
+    "codigo": "HMD13174SR835",
+    "nombre": "Vestido con nudo",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "040",
+        "label": "Multicolor",
+        "colorhexa": "#ffffff"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 385,
+    "calificacion": [],
+    "createdAt": "2023-12-12T22:11:19.228Z",
+    "updatedAt": "2023-12-12T22:11:19.228Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578db6c0e2468c7216523df",
+    "codigo": "013",
+    "nombre": "Vestido floral largo ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Bláshe",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "041",
+        "label": "Floral",
+        "colorhexa": "#faf9f9"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 399,
+    "calificacion": [],
+    "createdAt": "2023-12-12T22:15:08.788Z",
+    "updatedAt": "2023-12-12T22:15:08.788Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578dca90e2468c72165240a",
+    "codigo": "M107376",
+    "nombre": "Vestido largo botones",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "018",
+        "label": "Fucsia",
+        "colorhexa": "#d6009d"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 399,
+    "calificacion": [],
+    "createdAt": "2023-12-12T22:20:25.454Z",
+    "updatedAt": "2023-12-12T22:20:25.454Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578dd480e2468c721652415",
+    "codigo": "014",
+    "nombre": "Vestido Tropical",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "040",
+        "label": "Multicolor",
+        "colorhexa": "#ffffff"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 325,
+    "calificacion": [],
+    "createdAt": "2023-12-12T22:23:04.863Z",
+    "updatedAt": "2023-12-12T22:23:04.863Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578de8f0e2468c721652433",
+    "codigo": "D11151",
+    "nombre": "Salida de baño hoyitos",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Playa",
+    "subcategoria": "Casual",
+    "marca": "Active Usa",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "018",
+        "label": "Fucsia",
+        "colorhexa": "#d6009d"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 299,
+    "calificacion": [],
+    "createdAt": "2023-12-12T22:28:31.663Z",
+    "updatedAt": "2023-12-12T22:28:31.663Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578df930e2468c72165244a",
+    "codigo": "4481DM",
+    "nombre": "Vestido floral con encaje",
+    "genero": "Hombre",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Love tree",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "041",
+        "label": "Floral",
+        "colorhexa": "#faf9f9"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 499,
+    "calificacion": [],
+    "createdAt": "2023-12-12T22:32:51.448Z",
+    "updatedAt": "2023-12-12T22:32:51.448Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578e0a40e2468c721652475",
+    "codigo": "015",
+    "nombre": "Palazzo lunares ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Monos",
+    "subcategoria": "Palazzos",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      }
+    ],
+    "color": [
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 299,
+    "calificacion": [],
+    "createdAt": "2023-12-12T22:37:24.253Z",
+    "updatedAt": "2023-12-12T22:37:24.253Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578e2be0e2468c72165248c",
+    "codigo": "80172JH",
+    "nombre": "Abrigo Camel ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Abrigos",
+    "subcategoria": "Abrigos",
+    "marca": "Love tree",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "007",
+        "label": "Camel",
+        "colorhexa": "#e25c22"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 629,
+    "calificacion": [],
+    "createdAt": "2023-12-12T22:46:22.556Z",
+    "updatedAt": "2023-12-12T22:51:30.042Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578e3c40e2468c7216524a1",
+    "codigo": "T13584",
+    "nombre": "Sobre camisa cuadros",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Sobre camisa",
+    "subcategoria": "Sobre Camisas",
+    "marca": "Active Usa",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      }
+    ],
+    "color": [
+      {
+        "value": "040",
+        "label": "Multicolor",
+        "colorhexa": "#ffffff"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 419,
+    "calificacion": [],
+    "createdAt": "2023-12-12T22:50:44.340Z",
+    "updatedAt": "2023-12-12T22:52:25.191Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578e79e0e2468c7216524ea",
+    "codigo": "80174JH",
+    "nombre": "Abrigo fucsia",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Abrigos",
+    "subcategoria": "Abrigos",
+    "marca": "Love tree",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "018",
+        "label": "Fucsia",
+        "colorhexa": "#d6009d"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 599,
+    "calificacion": [],
+    "createdAt": "2023-12-12T23:07:10.457Z",
+    "updatedAt": "2023-12-12T23:07:10.457Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578e8cc0e2468c7216524f5",
+    "codigo": "J8202",
+    "nombre": "Blazzer limon",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blazzer",
+    "subcategoria": "Blazer",
+    "marca": "Love tree",
+    "talla": [
+      {
+        "value": "006",
+        "label": "L/XL"
+      }
+    ],
+    "color": [
+      {
+        "value": "008",
+        "label": "Limon",
+        "colorhexa": "#10d126"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 335,
+    "calificacion": [],
+    "createdAt": "2023-12-12T23:12:12.920Z",
+    "updatedAt": "2023-12-12T23:13:36.091Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578ea210e2468c721652519",
+    "codigo": "HMJ21243",
+    "nombre": "Blazzer Verde",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blazzer",
+    "subcategoria": "Blazer",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      },
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "004",
+        "label": "Verde",
+        "colorhexa": "#0c9715"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 335,
+    "calificacion": [],
+    "createdAt": "2023-12-12T23:17:53.968Z",
+    "updatedAt": "2023-12-12T23:19:15.583Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578eb7b0e2468c72165253b",
+    "codigo": "80016JM",
+    "nombre": "Chaqueta vinipiel fucsia",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Chaquetas",
+    "subcategoria": "Casuales",
+    "marca": "Love tree",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "018",
+        "label": "Fucsia",
+        "colorhexa": "#d6009d"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 539,
+    "calificacion": [],
+    "createdAt": "2023-12-12T23:23:39.496Z",
+    "updatedAt": "2023-12-12T23:23:39.496Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578ebf90e2468c721652546",
+    "codigo": "HMJ20905",
+    "nombre": "Blazzer negro abierto ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blazzer",
+    "subcategoria": "Blazer",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 335,
+    "calificacion": [],
+    "createdAt": "2023-12-12T23:25:45.101Z",
+    "updatedAt": "2023-12-12T23:25:45.101Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578ed910e2468c721652558",
+    "codigo": "016",
+    "nombre": "Gabardina botones",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Gabardinas",
+    "marca": "Oxboth",
+    "talla": [
+      {
+        "value": "005",
+        "label": "M//L"
+      }
+    ],
+    "color": [
+      {
+        "value": "013",
+        "label": "Palo de Rosa",
+        "colorhexa": "#e887ae"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 399,
+    "calificacion": [],
+    "createdAt": "2023-12-12T23:32:33.265Z",
+    "updatedAt": "2023-12-12T23:32:33.265Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578ee0b0e2468c721652563",
+    "codigo": "017",
+    "nombre": "Gabardina botones azul ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Sobre camisa",
+    "subcategoria": "Gabardinas",
+    "marca": "Oxboth",
+    "talla": [
+      {
+        "value": "005",
+        "label": "M//L"
+      }
+    ],
+    "color": [
+      {
+        "value": "044",
+        "label": "azul quemado ",
+        "colorhexa": "#567cae"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 399,
+    "calificacion": [],
+    "createdAt": "2023-12-12T23:34:35.340Z",
+    "updatedAt": "2023-12-12T23:35:41.640Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578eff10e2468c72165258a",
+    "codigo": "018",
+    "nombre": "Abrigo cuadrado",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Abrigos",
+    "subcategoria": "Casual",
+    "marca": "Jera",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "020",
+        "label": "Azul Rey",
+        "colorhexa": "#0d0ae6"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-12-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 489,
+    "calificacion": [],
+    "createdAt": "2023-12-12T23:42:41.161Z",
+    "updatedAt": "2023-12-12T23:42:41.161Z",
+    "__v": 0
+  },
+  {
+    "_id": "6578f5b9297f50b34b70867b",
+    "codigo": "DSY9840",
+    "nombre": "Crop con ondita a rayas ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Casual",
+    "marca": "Bomy",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "028",
+        "label": "Blanco",
+        "colorhexa": "#fcfcfc"
+      },
+      {
+        "value": "011",
+        "label": "Rosa Barbie",
+        "colorhexa": "#f708d7"
+      },
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      },
+      {
+        "value": "035",
+        "label": "Arena",
+        "colorhexa": "#eac980"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 115,
+    "calificacion": [],
+    "createdAt": "2023-12-13T00:07:21.600Z",
+    "updatedAt": "2023-12-13T16:53:47.636Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579e270375bc8646b8d7949",
+    "codigo": "T13176",
+    "nombre": "Crop top botones polo ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Casual",
+    "marca": "Active Usa",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "045",
+        "label": "Magenta",
+        "colorhexa": "#9c266b"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 339,
+    "calificacion": [],
+    "createdAt": "2023-12-13T16:57:20.256Z",
+    "updatedAt": "2023-12-13T16:58:18.190Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579e33a375bc8646b8d7969",
+    "codigo": "IT92081",
+    "nombre": "Crop top agujeta atras",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Casual",
+    "marca": "Iris",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 275,
+    "calificacion": [],
+    "createdAt": "2023-12-13T17:00:42.541Z",
+    "updatedAt": "2023-12-13T17:20:28.319Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579e3bd375bc8646b8d7974",
+    "codigo": "73364",
+    "nombre": "Blusa corta botones",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Casual",
+    "marca": "Amanda",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "022",
+        "label": "Amarillo",
+        "colorhexa": "#ffea00"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 189,
+    "calificacion": [],
+    "createdAt": "2023-12-13T17:02:53.901Z",
+    "updatedAt": "2023-12-13T17:02:53.901Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579e58e375bc8646b8d7980",
+    "codigo": "019",
+    "nombre": "Blusa escote con brillos ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Casual",
+    "marca": "Miss mia mia",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "019",
+        "label": "Azul cielo",
+        "colorhexa": "#32bdec"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 275,
+    "calificacion": [],
+    "createdAt": "2023-12-13T17:10:38.362Z",
+    "updatedAt": "2023-12-13T17:10:38.362Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579e64e375bc8646b8d798b",
+    "codigo": "IT91887",
+    "nombre": "Blusa escote con agujeta de brillos",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Casual",
+    "marca": "Iris",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "034",
+        "label": "Cafe",
+        "colorhexa": "#6d3618"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 289,
+    "calificacion": [],
+    "createdAt": "2023-12-13T17:13:50.289Z",
+    "updatedAt": "2023-12-13T17:13:50.289Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579e7c8375bc8646b8d7996",
+    "codigo": "020 ",
+    "nombre": "Crop top corte U ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Casual",
+    "marca": "Oxboth",
+    "talla": [
+      {
+        "value": "005",
+        "label": "M//L"
+      }
+    ],
+    "color": [
+      {
+        "value": "005",
+        "label": "Rojo",
+        "colorhexa": "#f90606"
+      },
+      {
+        "value": "008",
+        "label": "Limon",
+        "colorhexa": "#10d126"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 215,
+    "calificacion": [],
+    "createdAt": "2023-12-13T17:20:08.638Z",
+    "updatedAt": "2023-12-13T17:20:08.638Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579e8e1375bc8646b8d79ad",
+    "codigo": "HMT56757",
+    "nombre": "Blusa basica a  rayas ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Casual",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      },
+      {
+        "value": "018",
+        "label": "Fucsia",
+        "colorhexa": "#d6009d"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 289,
+    "calificacion": [],
+    "createdAt": "2023-12-13T17:24:49.375Z",
+    "updatedAt": "2023-12-13T17:29:04.264Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579e997375bc8646b8d79b8",
+    "codigo": "HMT56553B",
+    "nombre": "Blusa basica lisa ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Casual",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      }
+    ],
+    "color": [
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 289,
+    "calificacion": [],
+    "createdAt": "2023-12-13T17:27:51.197Z",
+    "updatedAt": "2023-12-13T17:27:51.197Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579eab8375bc8646b8d79dd",
+    "codigo": "DS9777A",
+    "nombre": "Crop top basico ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Basicas",
+    "marca": "Bomy",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "004",
+        "label": "Verde",
+        "colorhexa": "#0c9715"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 185,
+    "calificacion": [],
+    "createdAt": "2023-12-13T17:32:40.426Z",
+    "updatedAt": "2023-12-13T17:32:40.426Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579ec1c375bc8646b8d79fd",
+    "codigo": "74177",
+    "nombre": "Blusa copa marcada ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Casual",
+    "marca": "Ambiance",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "011",
+        "label": "Rosa Barbie",
+        "colorhexa": "#f708d7"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 239,
+    "calificacion": [],
+    "createdAt": "2023-12-13T17:38:36.415Z",
+    "updatedAt": "2023-12-13T17:38:36.415Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579eca1375bc8646b8d7a0e",
+    "codigo": "IT92259                                                                 ",
+    "nombre": "Blusa escote V",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Basicas",
+    "marca": "Iris",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      },
+      {
+        "value": "002",
+        "label": "Mediana"
+      }
+    ],
+    "color": [
+      {
+        "value": "012",
+        "label": "Rosa Pastel",
+        "colorhexa": "#f882ab"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 219,
+    "calificacion": [],
+    "createdAt": "2023-12-13T17:40:49.160Z",
+    "updatedAt": "2023-12-13T17:40:49.160Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579edda375bc8646b8d7a3f",
+    "codigo": "021",
+    "nombre": "Crop top manga larga jareta ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Casual",
+    "marca": "Oxboth",
+    "talla": [
+      {
+        "value": "005",
+        "label": "M//L"
+      },
+      {
+        "value": "004",
+        "label": "S/M"
+      }
+    ],
+    "color": [
+      {
+        "value": "019",
+        "label": "Azul cielo",
+        "colorhexa": "#32bdec"
+      },
+      {
+        "value": "013",
+        "label": "Palo de Rosa",
+        "colorhexa": "#e887ae"
+      },
+      {
+        "value": "006",
+        "label": "Lila",
+        "colorhexa": "#ec8ee9"
+      },
+      {
+        "value": "018",
+        "label": "Fucsia",
+        "colorhexa": "#d6009d"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 269,
+    "calificacion": [],
+    "createdAt": "2023-12-13T17:46:02.076Z",
+    "updatedAt": "2023-12-13T17:46:02.076Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579f1bd375bc8646b8d7a5c",
+    "codigo": "HMT55523",
+    "nombre": "Crop top manga larga cierre atras",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Casual",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "006",
+        "label": "Lila",
+        "colorhexa": "#ec8ee9"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 329,
+    "calificacion": [],
+    "createdAt": "2023-12-13T18:02:37.225Z",
+    "updatedAt": "2023-12-13T18:02:37.225Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579f341375bc8646b8d7aa0",
+    "codigo": "BT02956-L",
+    "nombre": "Blusa mezclilla manga larga nudo",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Casual",
+    "marca": "Bláshe",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      }
+    ],
+    "color": [
+      {
+        "value": "031",
+        "label": "Mezclilla Medio",
+        "colorhexa": "#364a78"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 345,
+    "calificacion": [],
+    "createdAt": "2023-12-13T18:09:05.804Z",
+    "updatedAt": "2023-12-13T18:09:05.804Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579f513375bc8646b8d7aab",
+    "codigo": "10220TH",
+    "nombre": "Camisa negra corta satin",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Camisas",
+    "marca": "Love tree",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      },
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 349,
+    "calificacion": [],
+    "createdAt": "2023-12-13T18:16:51.770Z",
+    "updatedAt": "2023-12-13T18:16:51.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579f652375bc8646b8d7ab9",
+    "codigo": "A7113",
+    "nombre": "Crop top bicolor ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Basicas",
+    "marca": "Julia",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "043",
+        "label": "Bicolor",
+        "colorhexa": "#f4f0f0"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 319,
+    "calificacion": [],
+    "createdAt": "2023-12-13T18:22:10.776Z",
+    "updatedAt": "2023-12-13T18:40:13.490Z",
+    "__v": 0
+  },
+  {
+    "_id": "6579fa77375bc8646b8d7ad0",
+    "codigo": "A9233",
+    "nombre": "Blusa tela mesh ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Basicas",
+    "marca": "Julia",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      },
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-13-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 285,
+    "calificacion": [],
+    "createdAt": "2023-12-13T18:39:51.550Z",
+    "updatedAt": "2023-12-14T17:15:35.758Z",
+    "__v": 0
+  },
+  {
+    "_id": "657b391f2036205b105d11f8",
+    "codigo": "SY2264A",
+    "nombre": "Crop top con manguitos",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Casual",
+    "marca": "Bomy",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "004",
+        "label": "Verde",
+        "colorhexa": "#0c9715"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-14-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 169,
+    "calificacion": [],
+    "createdAt": "2023-12-14T17:19:27.683Z",
+    "updatedAt": "2023-12-14T17:19:27.683Z",
+    "__v": 0
+  },
+  {
+    "_id": "657b39932036205b105d1203",
+    "codigo": "SY2264B",
+    "nombre": "Crop top con manguitos verde",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Casual",
+    "marca": "Bomy",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "004",
+        "label": "Verde",
+        "colorhexa": "#0c9715"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-14-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 169,
+    "calificacion": [],
+    "createdAt": "2023-12-14T17:21:23.703Z",
+    "updatedAt": "2023-12-14T17:21:23.703Z",
+    "__v": 0
+  },
+  {
+    "_id": "657b3a742036205b105d120e",
+    "codigo": "HT11696",
+    "nombre": "Crop top con broches y manguitos ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Casual",
+    "marca": "Bozzolo",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "005",
+        "label": "Rojo",
+        "colorhexa": "#f90606"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-14-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 295,
+    "calificacion": [],
+    "createdAt": "2023-12-14T17:25:08.081Z",
+    "updatedAt": "2023-12-14T17:26:12.099Z",
+    "__v": 0
+  },
+  {
+    "_id": "657b3b662036205b105d1234",
+    "codigo": "HMT56342",
+    "nombre": "Crop top vinipiel con agujeta",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Crop Tops",
+    "subcategoria": "Formales",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      },
+      {
+        "value": "001",
+        "label": "Chica"
+      }
+    ],
+    "color": [
+      {
+        "value": "007",
+        "label": "Camel",
+        "colorhexa": "#e25c22"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-14-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 349,
+    "calificacion": [],
+    "createdAt": "2023-12-14T17:29:10.351Z",
+    "updatedAt": "2023-12-14T17:29:10.351Z",
+    "__v": 0
+  },
+  {
+    "_id": "657b3c292036205b105d123f",
+    "codigo": "022",
+    "nombre": "Jogger vinipiel ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Pantalones",
+    "subcategoria": "Jogger",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "004",
+        "label": "S/M"
+      }
+    ],
+    "color": [
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-14-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 249,
+    "calificacion": [],
+    "createdAt": "2023-12-14T17:32:25.941Z",
+    "updatedAt": "2023-12-14T17:33:12.828Z",
+    "__v": 0
+  },
+  {
+    "_id": "657b3d9f2036205b105d1260",
+    "codigo": "J448R",
+    "nombre": "Pans ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Pans",
+    "subcategoria": "Pans",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "015",
+        "label": "Salmon",
+        "colorhexa": "#f85454"
+      },
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      },
+      {
+        "value": "046",
+        "label": "Gris Oscuro",
+        "colorhexa": "#272525"
+      },
+      {
+        "value": "047",
+        "label": "Gris Claro ",
+        "colorhexa": "#888181"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-14-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 199,
+    "calificacion": [],
+    "createdAt": "2023-12-14T17:38:39.471Z",
+    "updatedAt": "2023-12-14T17:46:18.600Z",
+    "__v": 0
+  },
+  {
+    "_id": "657b40142036205b105d12ad",
+    "codigo": "6583PY",
+    "nombre": "Jogger de lino ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Pantalones",
+    "subcategoria": "Jogger",
+    "marca": "Love tree",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "025",
+        "label": "Beige",
+        "colorhexa": "#f0d384"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-14-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 339,
+    "calificacion": [],
+    "createdAt": "2023-12-14T17:49:08.980Z",
+    "updatedAt": "2023-12-14T17:49:08.980Z",
+    "__v": 0
+  },
+  {
+    "_id": "657b40cb2036205b105d12b8",
+    "codigo": "18447",
+    "nombre": "Pantalon para tienda abierto de abajo",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Pantalones",
+    "subcategoria": "Casual",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "020",
+        "label": "Azul Rey",
+        "colorhexa": "#0d0ae6"
+      },
+      {
+        "value": "023",
+        "label": "Naranja",
+        "colorhexa": "#e74008"
+      },
+      {
+        "value": "004",
+        "label": "Verde",
+        "colorhexa": "#0c9715"
+      },
+      {
+        "value": "005",
+        "label": "Rojo",
+        "colorhexa": "#f90606"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-14-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 329,
+    "calificacion": [],
+    "createdAt": "2023-12-14T17:52:11.741Z",
+    "updatedAt": "2023-12-16T16:49:33.246Z",
+    "__v": 0
+  },
+  {
+    "_id": "657dd0f46ff4b848be4fa341",
+    "codigo": "023010372",
+    "nombre": "Pantalon cargo ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Pantalones",
+    "subcategoria": "Casual",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "011",
+        "label": "Rosa Barbie",
+        "colorhexa": "#f708d7"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 399,
+    "calificacion": [],
+    "createdAt": "2023-12-16T16:31:48.327Z",
+    "updatedAt": "2023-12-16T16:31:48.327Z",
+    "__v": 0
+  },
+  {
+    "_id": "657dd2a96ff4b848be4fa34c",
+    "codigo": "IP9045",
+    "nombre": "Pantalon cargo beige ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Pantalones",
+    "subcategoria": "Casual",
+    "marca": "Iris",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "025",
+        "label": "Beige",
+        "colorhexa": "#f0d384"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 439,
+    "calificacion": [],
+    "createdAt": "2023-12-16T16:39:05.047Z",
+    "updatedAt": "2023-12-16T16:39:05.047Z",
+    "__v": 0
+  },
+  {
+    "_id": "657dd4766ff4b848be4fa357",
+    "codigo": "72404",
+    "nombre": "Pans campana ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Pans",
+    "subcategoria": "Casual",
+    "marca": "Ambiance",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      }
+    ],
+    "color": [
+      {
+        "value": "002",
+        "label": "Verde Sage",
+        "colorhexa": "#8de29e"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 285,
+    "calificacion": [],
+    "createdAt": "2023-12-16T16:46:46.726Z",
+    "updatedAt": "2023-12-16T16:46:46.726Z",
+    "__v": 0
+  },
+  {
+    "_id": "657dd6266ff4b848be4fa380",
+    "codigo": "YP5039",
+    "nombre": "Pantalon cuadros recto                                                                                                                                                                                                                                                                                        Pantalon cuadros recto                                                                                                                       ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Pantalones",
+    "subcategoria": "Formales",
+    "marca": "CHOCOLATE",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      }
+    ],
+    "color": [
+      {
+        "value": "048",
+        "label": "Cuadros",
+        "colorhexa": "#c39898"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 479,
+    "calificacion": [],
+    "createdAt": "2023-12-16T16:53:58.484Z",
+    "updatedAt": "2023-12-16T16:56:42.407Z",
+    "__v": 0
+  },
+  {
+    "_id": "657dd8336ff4b848be4fa3a3",
+    "codigo": "3569",
+    "nombre": "Vestido corazon brillitos",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Formales",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      },
+      {
+        "value": "025",
+        "label": "Beige",
+        "colorhexa": "#f0d384"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 340,
+    "calificacion": [],
+    "createdAt": "2023-12-16T17:02:43.930Z",
+    "updatedAt": "2023-12-16T17:02:43.930Z",
+    "__v": 0
+  },
+  {
+    "_id": "657dd9296ff4b848be4fa3ae",
+    "codigo": "DY89985",
+    "nombre": "Vestido largo abertura a los lados",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Popular 27",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "001",
+        "label": "Negro",
+        "colorhexa": "#0a0a0a"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 319,
+    "calificacion": [],
+    "createdAt": "2023-12-16T17:06:49.263Z",
+    "updatedAt": "2023-12-16T17:06:49.263Z",
+    "__v": 0
+  },
+  {
+    "_id": "657ddc0b6ff4b848be4fa3ba",
+    "codigo": "DX83243",
+    "nombre": "Vestido escote corazon",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Formales",
+    "marca": "Popular 27",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      }
+    ],
+    "color": [
+      {
+        "value": "003",
+        "label": "Verde Botella",
+        "colorhexa": "#033a04"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 389,
+    "calificacion": [],
+    "createdAt": "2023-12-16T17:19:07.982Z",
+    "updatedAt": "2023-12-16T17:19:07.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "657ddd056ff4b848be4fa3c5",
+    "codigo": "029",
+    "nombre": "Vestido largo de mezclilla ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "030",
+        "label": "Mezclilla Oscura",
+        "colorhexa": "#10174c"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 499,
+    "calificacion": [],
+    "createdAt": "2023-12-16T17:23:17.213Z",
+    "updatedAt": "2023-12-16T17:23:17.213Z",
+    "__v": 0
+  },
+  {
+    "_id": "657dde546ff4b848be4fa3d0",
+    "codigo": "RD50304",
+    "nombre": "Vestido largo basico textura a rayas ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Heart Hips",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      },
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "002",
+        "label": "Verde Sage",
+        "colorhexa": "#8de29e"
+      },
+      {
+        "value": "025",
+        "label": "Beige",
+        "colorhexa": "#f0d384"
+      },
+      {
+        "value": "034",
+        "label": "Cafe",
+        "colorhexa": "#6d3618"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 289,
+    "calificacion": [],
+    "createdAt": "2023-12-16T17:28:52.674Z",
+    "updatedAt": "2023-12-16T17:28:52.674Z",
+    "__v": 0
+  },
+  {
+    "_id": "657ddede6ff4b848be4fa3db",
+    "codigo": "030",
+    "nombre": "Vestido largo escote en la espalda ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Formales",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "005",
+        "label": "Rojo",
+        "colorhexa": "#f90606"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 445,
+    "calificacion": [],
+    "createdAt": "2023-12-16T17:31:10.139Z",
+    "updatedAt": "2023-12-16T17:31:10.139Z",
+    "__v": 0
+  },
+  {
+    "_id": "657ddf916ff4b848be4fa3e6",
+    "codigo": "GDX9261A",
+    "nombre": "Vestido largo cuello halter ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Bella Girl",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "023",
+        "label": "Naranja",
+        "colorhexa": "#e74008"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 339,
+    "calificacion": [],
+    "createdAt": "2023-12-16T17:34:09.518Z",
+    "updatedAt": "2023-12-16T17:34:09.518Z",
+    "__v": 0
+  },
+  {
+    "_id": "657de0496ff4b848be4fa3f1",
+    "codigo": "HMD14001",
+    "nombre": "Vestido a los hombros ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Formales",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "001",
+        "label": "Chica"
+      },
+      {
+        "value": "002",
+        "label": "Mediana"
+      }
+    ],
+    "color": [
+      {
+        "value": "011",
+        "label": "Rosa Barbie",
+        "colorhexa": "#f708d7"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 279,
+    "calificacion": [],
+    "createdAt": "2023-12-16T17:37:13.536Z",
+    "updatedAt": "2023-12-16T17:37:13.536Z",
+    "__v": 0
+  },
+  {
+    "_id": "657de2d26ff4b848be4fa400",
+    "codigo": "JD51904L",
+    "nombre": " Vestido manga larga abertura ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Heart Hips",
+    "talla": [
+      {
+        "value": "002",
+        "label": "Mediana"
+      }
+    ],
+    "color": [
+      {
+        "value": "028",
+        "label": "Blanco",
+        "colorhexa": "#fcfcfc"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 319,
+    "calificacion": [],
+    "createdAt": "2023-12-16T17:48:02.980Z",
+    "updatedAt": "2023-12-16T17:48:02.980Z",
+    "__v": 0
+  },
+  {
+    "_id": "657de5886ff4b848be4fa40b",
+    "codigo": "HMD13920",
+    "nombre": "Vestido largo abertura pierna",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Haute Monde",
+    "talla": [
+      {
+        "value": "003",
+        "label": "Grande"
+      }
+    ],
+    "color": [
+      {
+        "value": "018",
+        "label": "Fucsia",
+        "colorhexa": "#d6009d"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 335,
+    "calificacion": [],
+    "createdAt": "2023-12-16T17:59:36.172Z",
+    "updatedAt": "2023-12-16T17:59:36.172Z",
+    "__v": 0
+  },
+  {
+    "_id": "657de79f6ff4b848be4fa416",
+    "codigo": "DZ7248",
+    "nombre": "Vestido animal print manga larga ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Vestidos",
+    "subcategoria": "Casual",
+    "marca": "Popular 27",
+    "talla": [
+      {
+        "value": "009",
+        "label": "Unitlla "
+      }
+    ],
+    "color": [
+      {
+        "value": "049",
+        "label": "Animal print ",
+        "colorhexa": "#763b05"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 319,
+    "calificacion": [],
+    "createdAt": "2023-12-16T18:08:31.987Z",
+    "updatedAt": "2023-12-16T18:09:57.234Z",
+    "__v": 0
+  },
+  {
+    "_id": "657e025afc8ec166a14fab1d",
+    "codigo": "20505",
+    "nombre": "Blusa brillos colgantes ",
+    "genero": "Mujer",
+    "edad": "25",
+    "categoria": "Blusas",
+    "subcategoria": "Formales",
+    "marca": "Mell",
+    "talla": [
+      {
+        "value": "006",
+        "label": "L/XL"
+      },
+      {
+        "value": "004",
+        "label": "S/M"
+      }
+    ],
+    "color": [
+      {
+        "value": "005",
+        "label": "Rojo",
+        "colorhexa": "#f90606"
+      },
+      {
+        "value": "020",
+        "label": "Azul Rey",
+        "colorhexa": "#0d0ae6"
+      },
+      {
+        "value": "045",
+        "label": "Magenta",
+        "colorhexa": "#9c266b"
+      },
+      {
+        "value": "034",
+        "label": "Cafe",
+        "colorhexa": "#6d3618"
+      }
+    ],
+    "proveedor": "Interno Mell",
+    "foto_principal": "https://www.agencianuba.com/mell_front_images/productos/2023-12-16-ejemplo.jpg",
+    "fotos_carrusel": [],
+    "estatus": "Activo",
+    "precio": 259,
+    "calificacion": [],
+    "createdAt": "2023-12-16T20:02:34.363Z",
+    "updatedAt": "2023-12-16T20:02:34.363Z",
+    "__v": 0
+  }
+]
