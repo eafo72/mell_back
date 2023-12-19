@@ -269,6 +269,7 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
   }
 });
 
+//recibe imagen desde files[]
 app.put("/foto", imageController.upload, async (req, res) => {
   const { id } = req.body;
 
@@ -283,6 +284,54 @@ app.put("/foto", imageController.upload, async (req, res) => {
 
   let formdata = new FormData();
   formdata.append("thumb", file);
+  formdata.append("nombre_thumb", tituloImage);
+
+  let response = await fetch(
+    `${process.env.URLFRONT}/productos/api_products_base64.php`,
+    {
+      method: "POST",
+      body: formdata,
+    }
+  );
+
+  let result = await response.json();
+
+  if (result.error) {
+    return res
+      .status(500)
+      .json({
+        error: true,
+        msg: "No se agregaron las fotos, intenterlo nuevamente",
+        details: result.error,
+      });
+  }
+
+  try {
+    const updateProducto = await Producto.findByIdAndUpdate(
+      id,
+      { $push: { fotos_carrusel: { image: thumb } } },
+      { upsert: true, new: true }
+    );
+    res.json({ updateProducto });
+  } catch (error) {
+    res.status(500).json({
+      msg: "Hubo un error actualizando el Producto " + error,
+    });
+  }
+});
+
+//recibe imagen base64
+app.put("/fotobase64", async (req, res) => {
+  const { id, name, imgbase64 } = req.body;
+
+  let today = new Date();
+  let date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+
+  let tituloImage = `${date}-${name}`;
+  let thumb = `${process.env.URLFRONT}/productos/${tituloImage}`;
+
+  let formdata = new FormData();
+  formdata.append("thumb", imgbase64);
   formdata.append("nombre_thumb", tituloImage);
 
   let response = await fetch(

@@ -21,7 +21,8 @@ require('dotenv').config()
 connectDB()
 
 app.use(cors())
-app.use(express.json())
+app.use(express.json({limit: '25mb'}));  //sirve para recibir base64 largos
+app.use(express.urlencoded({limit: '25mb'})); //sirve para recibir base64 largos
 
 //3. Rutas
 app.use('/usuario', userRoutes)
