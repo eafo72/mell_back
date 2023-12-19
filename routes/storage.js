@@ -106,7 +106,9 @@ app.post("/borrar", async (req, res) => {
   }
 });
 
-// STOCK
+///////////////////////////////////////////////// STOCK
+
+
 app.get("/stock/:id", async (req, res) => {
   try {
     //const stock = await Producto.find({almacen: { $elemMatch: { id_almacen: req.params.id }}});
@@ -166,7 +168,24 @@ app.get("/stock/:id", async (req, res) => {
   }
 });
 
-// APARTADOS (TODOS)
+//stock borrar
+app.post("/stock-borrar", async (req, res) => {
+  const { id } = req.body;
+
+  try {
+    const deleteStock = await Stock.findByIdAndRemove({ _id: id });
+    res.json(deleteStock);
+  } catch (error) {
+    res.status(500).json({
+      msg: "Hubo un error borrando el stock",
+    });
+  }
+});
+
+
+//////////////////////////////////////////////////// APARTADOS (TODOS)
+
+
 app.get("/apartado/:id", async (req, res) => {
   try {
     
@@ -287,7 +306,9 @@ app.get("/apartadoOrdenDia/:id", async (req, res) => {
   }
 });
 
-// ESTROPEADOS
+///////////////////////////////////////////////////////////// ESTROPEADOS
+
+
 app.get("/estropeados/:id", async (req, res) => {
   try {
     const estropeados = await Producto.find({
