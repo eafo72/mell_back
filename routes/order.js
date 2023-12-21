@@ -204,26 +204,28 @@ app.post('/crear', async (req, res) => {
 				   <p><strong>Descripcion: <strong> ${details}</p>`, // html body
 		}
 
-		const messageToClient = {
-			from: process.env.MAIL, // sender address
-			to: correo, // list of receivers
-			subject: "Estamos preparando tu pedido", // Subject line
-			text: "", // plain text body
-			html: `<p><strong>Fecha: <strong>${date}</p>
-			       <p><strong>Forma de entrega: <strong>${forma_entrega}</p>
-				   <p><strong>Entregar a: <strong>${entregar_a}</p>
-				   <p><strong>Dirección: <strong> ${direccion_entrega}</p>
-				   <p><strong>Teléfono: <strong> ${telefono}</p>
-				   <p><strong>Correo: <strong> ${correo}</p>
-				   <p><strong>Subtotal: <strong> ${subtotal}</p>
-				   <p><strong>Descuento: <strong> ${descuento}</p>
-				   <p><strong>I.V.A: <strong> ${iva}</p>
-				   <p><strong>Total: <strong> ${total}</p>
-				   <p><strong>Descripcion: <strong> ${details}</p>`, // html body
-		}
-
 		await mailer.sendMail(messageToMell);
-		await mailer.sendMail(messageToClient);
+
+		if(correo != null){
+			const messageToClient = {
+				from: process.env.MAIL, // sender address
+				to: correo, // list of receivers
+				subject: "Estamos preparando tu pedido", // Subject line
+				text: "", // plain text body
+				html: `<p><strong>Fecha: <strong>${date}</p>
+					   <p><strong>Forma de entrega: <strong>${forma_entrega}</p>
+					   <p><strong>Entregar a: <strong>${entregar_a}</p>
+					   <p><strong>Dirección: <strong> ${direccion_entrega}</p>
+					   <p><strong>Teléfono: <strong> ${telefono}</p>
+					   <p><strong>Correo: <strong> ${correo}</p>
+					   <p><strong>Subtotal: <strong> ${subtotal}</p>
+					   <p><strong>Descuento: <strong> ${descuento}</p>
+					   <p><strong>I.V.A: <strong> ${iva}</p>
+					   <p><strong>Total: <strong> ${total}</p>
+					   <p><strong>Descripcion: <strong> ${details}</p>`, // html body
+			}
+			await mailer.sendMail(messageToClient);
+		}	
 		
 
 		res.json(nuevoPedido)
