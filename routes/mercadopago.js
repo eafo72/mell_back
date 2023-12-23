@@ -8,6 +8,44 @@ const client = new mercadopago.MercadoPagoConfig({
 });
 
 
+// CREAR Preference
+app.post("/create_preference", (req, res) => {
+  const { total } = req.body;
+
+  const preference = new mercadopago.Preference(client);
+
+  preference.create({ body: 
+    {
+      "items": [
+        {
+          "title": "Compra desde punto de venta",
+          "unit_price": Number(total),
+          "quantity": 1
+        }
+      ],
+  
+      "back_urls": {
+        "success": "https://mell-panel.web.app/ventas/ventas_alta",
+        "failure": "https://mell-panel.web.app/ventas/ventas_alta",
+        "pending": "https://mell-panel.web.app/ventas/ventas_alta"
+      },
+      "auto_return": "approved"
+    }
+  })
+  .then(function(response){
+    //console.log(response);
+    res.json({
+      id:response.id
+    });
+  
+  }).catch(function(error){
+    console.log(error);
+  });
+});
+
+
+
+
 // CREAR PAGO DESDE SITIO WEB
 app.post("/process_payment", (req, res) => {
   const { transaction_amount, token, installments, payment_method_id, issuer_id, payer} = req.body;

@@ -182,7 +182,7 @@ app.post('/crear', async (req, res) => {
 		//mandamos correo a mell y al cliente
 		let details = "";
 		for(let i=0; i < descripcion.length; i++){
-			details += `<p>${descripcion[i]['nombre_producto']} ${descripcion[i]['cantidad']}  $ ${descripcion[i]['precio']}  $ ${descripcion[i]['total']}</p>`;
+			details += `<p>${descripcion[i]['nombre_producto']} Cantidad: ${descripcion[i]['cantidad']}  Precio: $ ${descripcion[i]['precio']}  Total: $ ${descripcion[i]['total']}</p>`;
 		}
 		
 
@@ -312,6 +312,7 @@ app.get('/ventas', async (req, res) => {
 			{
 				fecha:1,
 				descripcion:1,
+				estatus_pago:1,
 			},
 			
 		)
