@@ -51,7 +51,7 @@ app.get("/single/:id", async (req, res) => {
 
 // CREAR
 app.post("/crear", imageController.upload, async (req, res) => {
-  const { nombre } = req.body;
+  const { nombre, indexViewUp, indexViewDown } = req.body;
 
   let today = new Date();
   let date =
@@ -95,6 +95,8 @@ app.post("/crear", imageController.upload, async (req, res) => {
       const nuevaCategoria = await Categoria.create({
         nombre,
         imagen: thumb,
+        indexViewUp,
+        indexViewDown
       });
       res.json(nuevaCategoria);
     }
@@ -107,7 +109,7 @@ app.post("/crear", imageController.upload, async (req, res) => {
 
 // ACTUALIZAR
 app.put("/actualizar", imageController.upload, async (req, res) => {
-  const { id, nombre } = req.body;
+  const { id, nombre, indexViewUp, indexViewDown } = req.body;
 
   if (req.files.length != 0) {
     let today = new Date();
@@ -166,6 +168,8 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
 			{
 			  nombre,
 			  imagen:thumb,
+        indexViewUp, 
+        indexViewDown
 			},
 			{ new: true }
 		  );
@@ -230,7 +234,7 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
         const updateCategoria = await Categoria.findByIdAndUpdate(
           id,
           {
-            nombre
+            nombre,indexViewUp, indexViewDown
           },
           { new: true }
         );

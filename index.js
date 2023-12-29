@@ -13,6 +13,8 @@ const storageRoutes = require('./routes/storage')
 const orderRoutes = require('./routes/order')
 const codeRoutes = require('./routes/code')
 const faqRoutes = require('./routes/faq')
+const seoRoutes = require('./routes/seo')
+const companyRoutes = require('./routes/company')
 const mercadopagoRoutes = require('./routes/mercadopago')
 
 const cors = require('cors')
@@ -40,6 +42,8 @@ app.use('/almacen', storageRoutes)
 app.use('/pedido', orderRoutes)
 app.use('/codigo', codeRoutes)
 app.use('/faq', faqRoutes)
+app.use('/seo', seoRoutes)
+app.use('/empresa', companyRoutes)
 app.use('/mercadopago', mercadopagoRoutes)
 
 

@@ -12,6 +12,12 @@ const categorySchema = mongoose.Schema(
 			type: String,
 			required: true
 		}, 
+		indexViewUp: {
+			type: String,
+		},
+		indexViewDown: {
+			type: String,
+		}
 	},
 	{
 		timestamps: true, 

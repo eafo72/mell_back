@@ -313,6 +313,7 @@ app.get('/ventas', async (req, res) => {
 				fecha:1,
 				descripcion:1,
 				estatus_pago:1,
+				parcialidades:1
 			},
 			
 		)
