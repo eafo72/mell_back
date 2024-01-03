@@ -16,6 +16,7 @@ const faqRoutes = require('./routes/faq')
 const seoRoutes = require('./routes/seo')
 const companyRoutes = require('./routes/company')
 const mercadopagoRoutes = require('./routes/mercadopago')
+const whatsappRoutes = require('./routes/whatsapp')
 
 const cors = require('cors')
 
@@ -45,6 +46,7 @@ app.use('/faq', faqRoutes)
 app.use('/seo', seoRoutes)
 app.use('/empresa', companyRoutes)
 app.use('/mercadopago', mercadopagoRoutes)
+app.use('/whatsapp', whatsappRoutes)
 
 
 
@@ -54,3 +56,4 @@ app.get('/', (req, res) => res.send('MELL API'))
 app.listen(process.env.PORT, () => {
 	console.log('El servidor está corriendo en 4000')
 })
+
