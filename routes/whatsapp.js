@@ -162,6 +162,10 @@ app.post("/", (req, res) => {
       const texto = messages["text"]["body"];
       const numero = messages["from"];
 
+      console.log(texto);
+      console.log(telefono);
+
+
       EnviarMensajeWhastpapp(texto, numero);
     }
 
