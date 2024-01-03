@@ -163,7 +163,7 @@ app.post("/", (req, res) => {
       const numero = messages["from"];
 
       console.log(texto);
-      console.log(telefono);
+      console.log(numero);
 
 
       EnviarMensajeWhastpapp(texto, numero);
