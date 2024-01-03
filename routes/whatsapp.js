@@ -129,7 +129,7 @@ function EnviarMensajeWhastpapp(texto,number){
   }
 
   const options = {
-      host : "graph.facebook.com",
+      host : "https://graph.facebook.com",
       path : "/v17.0/197145163483349/messages",
       method : "POST",
       body : data,
@@ -139,7 +139,7 @@ function EnviarMensajeWhastpapp(texto,number){
       }
   };
 
-  console.log(data);
+  //console.log(data);
   const req = https.request(options,res => {
       res.on("data",d=>{
           process.stdout.write(d);
