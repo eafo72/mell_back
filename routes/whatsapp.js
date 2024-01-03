@@ -139,6 +139,7 @@ function EnviarMensajeWhastpapp(texto,number){
       }
   };
 
+  console.log(data);
   const req = https.request(options,res => {
       res.on("data",d=>{
           process.stdout.write(d);
@@ -162,8 +163,8 @@ app.post("/", (req, res) => {
       const texto = messages["text"]["body"];
       const numero = messages["from"];
 
-      console.log(texto);
-      console.log(numero);
+      //console.log(texto);
+      //console.log(numero);
 
 
       EnviarMensajeWhastpapp(texto, numero);
