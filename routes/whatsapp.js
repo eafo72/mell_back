@@ -7,6 +7,7 @@ function EnviarMensajeWhastpapp(texto, number) {
   let data = "";
 
   if (texto.includes("hola")) {
+    /*
     data = JSON.stringify({
       messaging_product: "whatsapp",
       recipient_type: "individual",
@@ -17,6 +18,11 @@ function EnviarMensajeWhastpapp(texto, number) {
         body: "🚀 Hola, Como estas, Bienvenido.",
       },
     });
+    */
+      data = { "messaging_product": "whatsapp", "to": "525571537936", "type": "template", "template": { "name": "hello_world", "language": { "code": "en_US" } } };
+   
+
+
   } else if (texto == "1") {
     data = JSON.stringify({
       messaging_product: "whatsapp",
