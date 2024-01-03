@@ -173,6 +173,7 @@ app.post("/", (req, res) => {
 
     if (typeof objetoMensaje != "undefined") {
       const messages = objetoMensaje[0];
+      console.log(messages);
       const texto = messages["text"]["body"];
       const numero = messages["from"];
 
