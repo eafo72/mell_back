@@ -19,7 +19,7 @@ function EnviarMensajeWhastpapp(texto, number) {
       },
     });
     */
-      data = { "messaging_product": "whatsapp", "to": "525571537936", "type": "template", "template": { "name": "hello_world", "language": { "code": "en_US" } } };
+      data = JSON.stringify({ "messaging_product": "whatsapp", "to": "525571537936", "type": "template", "template": { "name": "hello_world", "language": { "code": "en_US" } } });
    
 
 
