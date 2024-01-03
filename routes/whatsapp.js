@@ -19,7 +19,7 @@ function EnviarMensajeWhastpapp(texto, number) {
       },
     });
     */
-      data = JSON.stringify({ "messaging_product": "whatsapp", "to": "525571537936", "type": "text", "text": {"preview_url":"false", "body":"🚀 Hola, Como estas, Bienvenido."} });
+      data = JSON.stringify({ "messaging_product": "whatsapp", "to": number, "type": "text", "text": {"preview_url":"false", "body":"🚀 Hola, Como estas, Bienvenido."} });
    
 
 
