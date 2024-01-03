@@ -138,8 +138,7 @@ function EnviarMensajeWhastpapp(texto, number) {
     body: data,
     headers: {
       "Content-Type": "application/json",
-      Authorization:
-        "Bearer EAATBOAU5ZA6QBO0lNkXwjZA2J7HqszMKUtZCdZBW4s7meoycx2GS4r9JqXnqIgGvbZAEu5UyZBcSRj24AK60zSjczYcQE1WXEVo76EOqLg1SE08cSuD9IDTUN3ABKftxGO6ZCJPyNUnCWnyJ8zwZAcdj13ZCkIo8ZC2nmjEdUvoqJrfFsBKLZAGoaZCzQusDVmZBEudNWxqQM8PQFFKkvV0ZAqNdyVy7nHsEJbrikFL80ZD",
+      "Authorization": "Bearer EAATBOAU5ZA6QBO0lNkXwjZA2J7HqszMKUtZCdZBW4s7meoycx2GS4r9JqXnqIgGvbZAEu5UyZBcSRj24AK60zSjczYcQE1WXEVo76EOqLg1SE08cSuD9IDTUN3ABKftxGO6ZCJPyNUnCWnyJ8zwZAcdj13ZCkIo8ZC2nmjEdUvoqJrfFsBKLZAGoaZCzQusDVmZBEudNWxqQM8PQFFKkvV0ZAqNdyVy7nHsEJbrikFL80ZD",
     },
   };
 
