@@ -149,7 +149,7 @@ function EnviarMensajeWhastpapp(texto,number){
   req.end();
 }
 
-app.post("/recibir", (req, res) => {
+app.post("/", (req, res) => {
   try {
     //en la informacion que llega buscamos el texto y numero de telefono
     const entry = req.body["entry"][0];
@@ -173,7 +173,7 @@ app.post("/recibir", (req, res) => {
 });
 
 //este endpoint solo sirve para que meta verifique el funcionamiento (es solo una vez)
-app.get("/verificar", (req, res) => {
+app.get("/", (req, res) => {
   try {
     const tokenMell = "MELLAPIMETA"; //poner este token en la api de meta (webhook)
     const token = req.query["hub.verify_token"];
