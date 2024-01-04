@@ -141,6 +141,8 @@ async function EnviarMensajeWhastpapp(texto, number) {
     });
   }
 
+  const metatoken = "EAATBOAU5ZA6QBO4fDA2RJJIZB3tIDjknEGQLToHsyL4rVRV3zzHSKktYJXy528SGMkfGZAVEsPcsDTAj0DJ6KG5fZCIs1qUKjIeYaAtZCSsZBeW3JkCJvKU8Kj4D1illriSL5eBUQsM9fUNElZCtiYtLgijuj1M1qGXhsfSU3j7tZAQJHsal3j0yvwZAJzqdYO1UTO2H0bl4jXlOoMWgYJW0tHYg9jLXN912w6ien";
+
   const options = {
     host: "graph.facebook.com",
     path: "/v17.0/197145163483349/messages",
@@ -148,7 +150,7 @@ async function EnviarMensajeWhastpapp(texto, number) {
     body: data,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer EAATBOAU5ZA6QBO0lNkXwjZA2J7HqszMKUtZCdZBW4s7meoycx2GS4r9JqXnqIgGvbZAEu5UyZBcSRj24AK60zSjczYcQE1WXEVo76EOqLg1SE08cSuD9IDTUN3ABKftxGO6ZCJPyNUnCWnyJ8zwZAcdj13ZCkIo8ZC2nmjEdUvoqJrfFsBKLZAGoaZCzQusDVmZBEudNWxqQM8PQFFKkvV0ZAqNdyVy7nHsEJbrikFL80ZD",
+      "Authorization": "Bearer "+metatoken,
     },
   };
 
