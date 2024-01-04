@@ -1,14 +1,17 @@
 const express = require("express");
 const app = express.Router();
+const Mensaje = require('../models/Mensaje')
 const https = require("https");
 
-function EnviarMensajeWhastpapp(texto, number) {
+async function EnviarMensajeWhastpapp(texto, number) {
+
+  number = "525571537936"   //numero hardcodeado por el momento
+
   texto = texto.toLowerCase();
   let data = "";
-  console.log(number);
 
   if (texto.includes("hola")) {
-    /*
+    
     data = JSON.stringify({
       messaging_product: "whatsapp",
       recipient_type: "individual",
@@ -19,8 +22,8 @@ function EnviarMensajeWhastpapp(texto, number) {
         body: "🚀 Hola, Como estas, Bienvenido.",
       },
     });
-    */
-      data = JSON.stringify({ "messaging_product": "whatsapp", "to": number, "type": "text", "text": {"preview_url":"false", "body":"🚀 Hola, Como estas, Bienvenido."} });
+    
+      //data = JSON.stringify({ "messaging_product": "whatsapp", "to": number, "type": "text", "text": {"preview_url":"false", "body":"🚀 Hola, Como estas, Bienvenido."} });
    
 
 
@@ -158,12 +161,19 @@ function EnviarMensajeWhastpapp(texto, number) {
 
     req.write(data);
     req.end();
+
+    await Mensaje.create({
+      telefono:number,
+      emisor: "ChatBot",
+      mensaje:data.text.body,
+    })
+
   } catch (error) {
     console.log(error);
   }
 }
 
-app.post("/", (req, res) => {
+app.post("/", async (req, res) => {
   try {
     //en la informacion que llega buscamos el texto y numero de telefono
     const entry = req.body["entry"][0];
@@ -173,12 +183,18 @@ app.post("/", (req, res) => {
 
     if (typeof objetoMensaje != "undefined") {
       const messages = objetoMensaje[0];
-      console.log(messages);
       const texto = messages["text"]["body"];
       const numero = messages["from"];
 
       //console.log(texto);
       //console.log(numero);
+
+      //guardamos mensaje
+      await Mensaje.create({
+        telefono:numero,
+        emisor: "Cliente",
+				mensaje:texto,
+  		})
 
       EnviarMensajeWhastpapp(texto, numero);
     }
