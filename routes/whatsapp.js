@@ -167,7 +167,7 @@ async function EnviarMensajeWhastpapp(texto, number) {
     await Mensaje.create({
       telefono:number,
       emisor: "ChatBot",
-      mensaje:data.text.body,
+      mensaje:JSON.parse(data).text.body,
     })
 
   } catch (error) {
