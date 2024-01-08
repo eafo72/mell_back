@@ -235,9 +235,9 @@ app.get("/obtener", async (req, res) => {
       {
         $group: { 
           _id: '$telefono',
-          telefono:{$last:"$telefono"},
-          emisor:{$last:"$emisor"},
-          mensaje:{$last:"$mensaje"}
+          telefono:{$first:"$telefono"},
+          emisor:{$first:"$emisor"},
+          mensaje:{$first:"$mensaje"}
         }
       },
       {
