@@ -226,10 +226,23 @@ app.get("/", (req, res) => {
 });
 
 
-// LISTA
+// LISTA DE TODOS
 app.get("/obtener", async (req, res) => {
   try {
-    const mensajes = await Mensaje.find({});
+    //const mensajes = await Mensaje.find({});
+
+    const mensajes = await Mensaje.aggregate([
+      {
+        $group: { _id: '$telefono'}
+      },
+      {
+        $sort: {
+          createdAt: -1
+        }
+      },
+    ]);
+
+
     res.json({ mensajes });
   } catch (error) {
     res.status(500).json({ msg: "Hubo un error obteniendo los datos" });
