@@ -3,6 +3,8 @@ const app = express.Router();
 const Mensaje = require('../models/Mensaje')
 const https = require("https");
 
+const metatoken = "EAATBOAU5ZA6QBO2od5e2ca05zXTLvIKDiKa9wKBNnQJ2KHynnI9DH1iP5CsVPV4dpm4cdJ1YVCUor7WZBowbfO1wA02vxl6d7jzHrcGfv0RZAXXVxVwzpPBQmpp57WvyCk1cGlnennJ4GwrxreRIEI9I9NEeUTOlVL0j3X7J1rJDyhLpADkKbjjBQw1RR7ZC2K9D0rsCahcKn7pjNrNkZB1s8m5wEwbhXBnYZD";
+
 async function EnviarMensajeWhastpapp(texto, number) {
 
   number = "525571537936"   //numero hardcodeado por el momento
@@ -141,8 +143,6 @@ async function EnviarMensajeWhastpapp(texto, number) {
     });
   }
 
-  const metatoken = "EAATBOAU5ZA6QBO2od5e2ca05zXTLvIKDiKa9wKBNnQJ2KHynnI9DH1iP5CsVPV4dpm4cdJ1YVCUor7WZBowbfO1wA02vxl6d7jzHrcGfv0RZAXXVxVwzpPBQmpp57WvyCk1cGlnennJ4GwrxreRIEI9I9NEeUTOlVL0j3X7J1rJDyhLpADkKbjjBQw1RR7ZC2K9D0rsCahcKn7pjNrNkZB1s8m5wEwbhXBnYZD";
-
   const options = {
     host: "graph.facebook.com",
     path: "/v17.0/197145163483349/messages",
@@ -252,6 +252,17 @@ app.post("/enviar", async (req, res) => {
         body: mensaje,
       },
     });
+
+    const options = {
+      host: "graph.facebook.com",
+      path: "/v17.0/197145163483349/messages",
+      method: "POST",
+      body: data,
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer "+metatoken,
+      },
+    };
 
 
   try {
