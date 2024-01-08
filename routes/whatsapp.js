@@ -255,6 +255,24 @@ app.get("/obtener", async (req, res) => {
 });
 
 
+//obtener por numero de telefono
+app.get("/single/:number", async (req, res) => {
+
+  const number = req.params.number;
+
+  try {
+    const single = await Mensaje.find({telefono : number });
+    res.json({ single });
+
+  } catch (error) {
+    res.status(500).json({
+      msg:
+        "Hubo un error obteniendo los datos " + error,
+    });
+  }
+});
+
+
 
 //ENVIAR MENSAJE
 app.post("/enviar", async (req, res) => {
