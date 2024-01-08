@@ -233,7 +233,12 @@ app.get("/obtener", async (req, res) => {
 
     const mensajes = await Mensaje.aggregate([
       {
-        $group: { _id: '$telefono'}
+        $group: { 
+          _id: '$telefono',
+          telefono:{$last:"$telefono"},
+          emisor:{$last:"$emisor"},
+          mensaje:{$last:"$mensaje"}
+        }
       },
       {
         $sort: {
