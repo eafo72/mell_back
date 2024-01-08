@@ -141,7 +141,7 @@ async function EnviarMensajeWhastpapp(texto, number) {
     });
   }
 
-  const metatoken = "EAATBOAU5ZA6QBO4fDA2RJJIZB3tIDjknEGQLToHsyL4rVRV3zzHSKktYJXy528SGMkfGZAVEsPcsDTAj0DJ6KG5fZCIs1qUKjIeYaAtZCSsZBeW3JkCJvKU8Kj4D1illriSL5eBUQsM9fUNElZCtiYtLgijuj1M1qGXhsfSU3j7tZAQJHsal3j0yvwZAJzqdYO1UTO2H0bl4jXlOoMWgYJW0tHYg9jLXN912w6ien";
+  const metatoken = "EAATBOAU5ZA6QBO2od5e2ca05zXTLvIKDiKa9wKBNnQJ2KHynnI9DH1iP5CsVPV4dpm4cdJ1YVCUor7WZBowbfO1wA02vxl6d7jzHrcGfv0RZAXXVxVwzpPBQmpp57WvyCk1cGlnennJ4GwrxreRIEI9I9NEeUTOlVL0j3X7J1rJDyhLpADkKbjjBQw1RR7ZC2K9D0rsCahcKn7pjNrNkZB1s8m5wEwbhXBnYZD";
 
   const options = {
     host: "graph.facebook.com",
@@ -234,6 +234,50 @@ app.get("/obtener", async (req, res) => {
   } catch (error) {
     res.status(500).json({ msg: "Hubo un error obteniendo los datos" });
   }
+});
+
+
+
+//ENVIAR MENSAJE
+app.post("/enviar", async (req, res) => {
+  const { number, mensaje } = req.body;
+        
+    data = JSON.stringify({
+      messaging_product: "whatsapp",
+      recipient_type: "individual",
+      to: number,
+      type: "text",
+      text: {
+        preview_url: false,
+        body: mensaje,
+      },
+    });
+
+
+  try {
+    const req = https.request(options, (res) => {
+      res.on("data", (d) => {
+        process.stdout.write(d);
+      });
+    });
+
+    req.write(data);
+    req.end();
+
+    await Mensaje.create({
+      telefono:number,
+      emisor: "Administrador",
+      mensaje:JSON.parse(data).text.body,
+    })
+
+    res.json({msj:"Mensaje enviado"});
+
+  } catch (error) {
+    res.status(500).json({
+      msg: "Hubo un error enviando el mensaje " + error,
+    });
+  }
+  
 });
 
 module.exports = app;
