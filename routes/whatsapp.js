@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express.Router();
 const Mensaje = require('../models/Mensaje')
+const Cliente = require('../models/Cliente')
 const https = require("https");
 
-const metatoken = "EAATBOAU5ZA6QBO2od5e2ca05zXTLvIKDiKa9wKBNnQJ2KHynnI9DH1iP5CsVPV4dpm4cdJ1YVCUor7WZBowbfO1wA02vxl6d7jzHrcGfv0RZAXXVxVwzpPBQmpp57WvyCk1cGlnennJ4GwrxreRIEI9I9NEeUTOlVL0j3X7J1rJDyhLpADkKbjjBQw1RR7ZC2K9D0rsCahcKn7pjNrNkZB1s8m5wEwbhXBnYZD";
+const metatoken = process.env.METATOKEN;
 
 async function EnviarMensajeWhastpapp(texto, number) {
 
@@ -226,7 +227,7 @@ app.get("/", (req, res) => {
 });
 
 
-// LISTA DE TODOS
+// LISTA DE TODOS AGRUPADOS POR TELEFONO
 app.get("/obtener", async (req, res) => {
   try {
     //const mensajes = await Mensaje.find({});
@@ -255,7 +256,7 @@ app.get("/obtener", async (req, res) => {
 });
 
 
-//obtener por numero de telefono
+//obtener TODOS por numero de telefono
 app.get("/single/:number", async (req, res) => {
 
   const number = req.params.number;
@@ -272,11 +273,28 @@ app.get("/single/:number", async (req, res) => {
   }
 });
 
+//obtener TODOS por numero de telefono
+app.get("/nombreCliente/:number", async (req, res) => {
+
+  const number = req.params.number;
+
+  try {
+    const single = await Cliente.find({telefono : number });
+    res.json({ single });
+
+  } catch (error) {
+    res.status(500).json({
+      msg:
+        "Hubo un error obteniendo los datos " + error,
+    });
+  }
+});
+
 
 
 //ENVIAR MENSAJE
 app.post("/enviar", async (req, res) => {
-  const { number, mensaje } = req.body;
+  const {nombre, number, mensaje } = req.body;
         
     data = JSON.stringify({
       messaging_product: "whatsapp",
@@ -311,11 +329,39 @@ app.post("/enviar", async (req, res) => {
     req.write(data);
     req.end();
 
+    //guardamos el mensaje
     await Mensaje.create({
       telefono:number,
       emisor: "Administrador",
       mensaje:JSON.parse(data).text.body,
     })
+
+    //revisamos si ya existe en clientes
+    const ifExist = await Cliente.find( { 
+			$or: [{
+				telefono: number
+			}]
+		})
+
+		if(ifExist.length > 0){
+      //si existe update 
+      await Cliente.findOneAndUpdate(
+        {
+          telefono: number
+        },
+        {
+        nombre: nombre
+        },
+        { new: true }
+      );
+
+    }else{
+      //sino existe create
+      await Cliente.create({
+        telefono:number,
+        nombre: nombre
+      })
+    }  
 
     res.json({msj:"Mensaje enviado"});
 
