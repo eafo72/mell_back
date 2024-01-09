@@ -246,6 +246,14 @@ app.get("/obtener", async (req, res) => {
           createdAt: -1
         }
       },
+      {
+        $lookup: {
+        from: "clientes",
+        localField: "telefono",
+        foreignField: "telefono",
+        as: "nombre_cliente",
+        },
+      },
     ]);
 
 
@@ -273,7 +281,7 @@ app.get("/single/:number", async (req, res) => {
   }
 });
 
-//obtener TODOS por numero de telefono
+//obtener nombre cliente por numero de telefono
 app.get("/nombreCliente/:number", async (req, res) => {
 
   const number = req.params.number;
