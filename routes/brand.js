@@ -9,7 +9,7 @@ const auth = require('../middlewares/authorization')
 // LISTA
 app.get('/obtener', async (req, res) => {
 	try {
-		const marcas = await Marca.find({})
+		const marcas = await Marca.find({}).sort( { "nombre": 1 })
         res.json({marcas})
 
 	} catch (error) {
