@@ -20,10 +20,35 @@ app.get("/obtener", async (req, res) => {
   }
 });
 
-// SINGLE
+// SINGLE POR ID
 app.get("/single/:id", async (req, res) => {
   try {
     const single = await Producto.findById(req.params.id);
+    const categoria = single.categoria;
+
+    const related_products = await Producto.find({categoria: categoria}).limit(5);
+
+    res.json({ single, related_products });
+
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        msg:
+          "Hubo un error obteniendo los datos del id " +
+          req.params.id +
+          " error: " +
+          error,
+      });
+  }
+});
+
+// SINGLE POR CODIGO DE PRODUCTO
+app.get("/single-codigo/:codigo", async (req, res) => {
+
+  try {
+    const single = await Producto.find({codigo:req.params.codigo});
+
     const categoria = single.categoria;
 
     const related_products = await Producto.find({categoria: categoria}).limit(5);
