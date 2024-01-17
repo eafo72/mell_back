@@ -49,7 +49,7 @@ app.get("/single-codigo/:codigo", async (req, res) => {
   try {
     const single = await Producto.find({codigo:req.params.codigo});
 
-    const categoria = single.categoria;
+    const categoria = single[0].categoria;
 
     const related_products = await Producto.find({categoria: categoria}).limit(5);
 
