@@ -69,7 +69,7 @@ app.get("/single-codigo/:codigo", async (req, res) => {
 });
 
 // CREAR
-app.post("/crear", imageController.upload, async (req, res) => {
+app.post("/crear", async (req, res) => {
   const {
     codigo,
     nombre,
@@ -81,6 +81,8 @@ app.post("/crear", imageController.upload, async (req, res) => {
     marca,
     talla,
     color,
+    name,
+    imgbase64,
     proveedor,
     estatus,
     precio,
@@ -88,16 +90,13 @@ app.post("/crear", imageController.upload, async (req, res) => {
   } = req.body;
 
   let today = new Date();
-  let date =
-    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+  let date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 
-  let tituloImage = `${date}-${req.files[0].originalname}`;
+  let tituloImage = `${date}-${name}`;
   let thumb = `${process.env.URLFRONT}/productos/${tituloImage}`;
 
-  let file = fs.readFileSync(req.files[0].path, { encoding: "base64" });
-
   let formdata = new FormData();
-  formdata.append("thumb", file);
+  formdata.append("thumb", imgbase64);
   formdata.append("nombre_thumb", tituloImage);
 
   let response = await fetch(
@@ -165,7 +164,7 @@ app.post("/crear", imageController.upload, async (req, res) => {
 
 // ACTUALIZAR
 //app.put('/actualizar', auth, async (req, res) => {
-app.put("/actualizar", imageController.upload, async (req, res) => {
+app.put("/actualizar", async (req, res) => {
   const {
     id,
     codigo,
@@ -178,27 +177,22 @@ app.put("/actualizar", imageController.upload, async (req, res) => {
     marca,
     talla,
     color,
+    name,
+    imgbase64,
     proveedor,
     estatus,
     precio,
   } = req.body;
 
-  if (req.files.length != 0) {
+  if (imgbase64 != null) {
     let today = new Date();
-    let date =
-      today.getFullYear() +
-      "-" +
-      (today.getMonth() + 1) +
-      "-" +
-      today.getDate();
+    let date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 
-    let tituloImage = `${date}-${req.files[0].originalname}`;
+    let tituloImage = `${date}-${name}`;
     let thumb = `${process.env.URLFRONT}/productos/${tituloImage}`;
 
-    let file = fs.readFileSync(req.files[0].path, { encoding: "base64" });
-
     let formdata = new FormData();
-    formdata.append("thumb", file);
+    formdata.append("thumb", imgbase64);
     formdata.append("nombre_thumb", tituloImage);
 
     let response = await fetch(
