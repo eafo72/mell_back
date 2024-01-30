@@ -168,6 +168,26 @@ app.get("/stock/:id", async (req, res) => {
   }
 });
 
+
+app.put("/stock-editar", async (req, res) => {
+  const { id, stock, apartado, estropeado } = req.body;
+  try {
+    const updateStock = await Stock.findByIdAndUpdate(id, {
+      $set: { 
+        stock: stock, 
+        apartado:apartado,
+        estropeado:estropeado
+      },
+      $currentDate: { lastModified: true },
+    });
+    res.json({ updateStock });
+  } catch (error) {
+    res.status(500).json({
+      msg: "Hubo un error actualizando el almacén",
+    });
+  }
+});
+
 //stock borrar
 app.post("/stock-borrar", async (req, res) => {
   const { id } = req.body;
