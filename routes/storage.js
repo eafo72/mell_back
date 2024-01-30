@@ -108,7 +108,7 @@ app.post("/borrar", async (req, res) => {
 
 ///////////////////////////////////////////////// STOCK
 
-
+//stock por almacen
 app.get("/stock/:id", async (req, res) => {
   try {
     //const stock = await Producto.find({almacen: { $elemMatch: { id_almacen: req.params.id }}});
@@ -116,7 +116,7 @@ app.get("/stock/:id", async (req, res) => {
     const stock = await Stock.aggregate([
       {
         $match: {
-          _id: ObjectId(req.params.id),
+          id_almacen: ObjectId(req.params.id),
         },
       },
       {
@@ -168,6 +168,25 @@ app.get("/stock/:id", async (req, res) => {
   }
 });
 
+//stock por item
+app.get("/stock-single/:id", async (req, res) => {
+  try {
+    const single = await Stock.findById(req.params.id);
+    
+    res.json({ single });
+
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        msg:
+          "Hubo un error obteniendo los datos del id " +
+          req.params.id +
+          " error: " +
+          error,
+      });
+  }
+});
 
 app.put("/stock-editar", async (req, res) => {
   const { id, stock, apartado, estropeado } = req.body;
