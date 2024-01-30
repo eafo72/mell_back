@@ -92,7 +92,9 @@ app.post("/crear", async (req, res) => {
   let today = new Date();
   let date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 
-  let tituloImage = `${date}-${name}`;
+  //let tituloImage = `${date}-${name}`;
+  let file_extension = name.split(".").pop();
+  let tituloImage = `${codigo}.${file_extension}`;
   let thumb = `${process.env.URLFRONT}/productos/${tituloImage}`;
 
   let formdata = new FormData();
@@ -188,7 +190,9 @@ app.put("/actualizar", async (req, res) => {
     let today = new Date();
     let date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 
-    let tituloImage = `${date}-${name}`;
+    //let tituloImage = `${date}-${name}`;
+    let file_extension = name.split(".").pop();
+    let tituloImage = `${codigo}.${file_extension}`;
     let thumb = `${process.env.URLFRONT}/productos/${tituloImage}`;
 
     let formdata = new FormData();
