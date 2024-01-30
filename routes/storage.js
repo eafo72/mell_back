@@ -116,7 +116,7 @@ app.get("/stock/:id", async (req, res) => {
     const stock = await Stock.aggregate([
       {
         $match: {
-          id_almacen: ObjectId(req.params.id),
+          _id: ObjectId(req.params.id),
         },
       },
       {
