@@ -406,6 +406,7 @@ app.get("/estropeados/:id", async (req, res) => {
   }
 });
 
+/*
 app.get("/estropeados/:id", async (req, res) => {
   try {
     const estropeados = await Producto.find({
@@ -425,7 +426,7 @@ app.get("/estropeados/:id", async (req, res) => {
       });
   }
 });
-
+*/
 /////////////////////////////////////////////////// ENTRADAS ////////////////////////////////////////////////////////////
 
 // LISTA
