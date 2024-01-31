@@ -350,7 +350,7 @@ app.get("/apartadoOrdenDia/:id", async (req, res) => {
 app.get("/estropeados/:id", async (req, res) => {
   try {
     
-    const stock = await Stock.aggregate([
+    const estropeados = await Stock.aggregate([
       {
         $match: {
           id_almacen: ObjectId(req.params.id),
