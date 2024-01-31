@@ -346,7 +346,65 @@ app.get("/apartadoOrdenDia/:id", async (req, res) => {
 });
 
 ///////////////////////////////////////////////////////////// ESTROPEADOS
+//estropeados por almacen
+app.get("/estropeados/:id", async (req, res) => {
+  try {
+    
+    const stock = await Stock.aggregate([
+      {
+        $match: {
+          id_almacen: ObjectId(req.params.id),
+          estropeado: { $gt: 0 } 
+        },
+      },
+      {
+        $lookup: {
+          from: "productos",
+          localField: "codigo_producto",
+          foreignField: "codigo",
+          as: "datos_producto",
+        },
+      },
+	  {
+        $unwind: "$datos_producto"
+      },
+      {
+        $lookup: {
+          from: "tallas",
+          localField: "codigo_talla",
+          foreignField: "codigo",
+          as: "datos_talla",
+        },
+      },
+	  {
+        $unwind: "$datos_talla"
+      },
+      {
+        $lookup: {
+          from: "colors",
+          localField: "codigo_color",
+          foreignField: "codigo",
+          as: "datos_color",
+        },
+      },
+      {
+        $unwind: "$datos_color",
+      },
+    ]);
 
+    res.json({ estropeados });
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        msg:
+          "Hubo un error obteniendo los datos del id " +
+          req.params.id +
+          " error: " +
+          error,
+      });
+  }
+});
 
 app.get("/estropeados/:id", async (req, res) => {
   try {
