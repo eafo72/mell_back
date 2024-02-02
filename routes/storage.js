@@ -194,9 +194,14 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
     const stock = await Stock.aggregate(
       [
         {
+          $match: {
+            codigo : req.params.codigo,
+          },
+        },
+        {
           $group:
             {
-              codigo : req.params.codigo,
+              _id : null,
               stockTotal: { $sum: "$stock" },
             }
         }
