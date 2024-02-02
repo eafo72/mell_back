@@ -196,7 +196,7 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
         {
           $group:
             {
-              codigo : req.params.codigo,
+              codigo : {req.params.codigo},
               stockTotal: { $sum: "$stock" },
             }
         }
@@ -211,7 +211,7 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
       .json({
         msg:
           "Hubo un error obteniendo los datos del id " +
-          req.params.id +
+          req.params.codigo +
           " error: " +
           error,
       });
