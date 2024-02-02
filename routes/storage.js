@@ -196,7 +196,7 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
         {
           $group:
             {
-              codigo : {req.params.codigo},
+              codigo : req.params.codigo,
               stockTotal: { $sum: "$stock" },
             }
         }
