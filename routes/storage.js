@@ -168,7 +168,7 @@ app.get("/stock/:id", async (req, res) => {
   }
 });
 
-//stock por item
+//stock por id stock
 app.get("/stock-single/:id", async (req, res) => {
   try {
     const single = await Stock.findById(req.params.id);
@@ -187,6 +187,40 @@ app.get("/stock-single/:id", async (req, res) => {
       });
   }
 });
+
+//stock por codigo producto
+app.get("/stock-codigo/:codigo", async (req, res) => {
+  try {
+    const stock = await Stock.aggregate(
+      [
+        {
+          $group:
+            {
+              codigo : req.params.codigo,
+              stockTotal: { $sum: "$stock" },
+            }
+        }
+      ]
+      );
+    
+    res.json({ stock });
+
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        msg:
+          "Hubo un error obteniendo los datos del id " +
+          req.params.id +
+          " error: " +
+          error,
+      });
+  }
+});
+
+
+
+
 
 app.put("/stock-editar", async (req, res) => {
   const { id, stock, apartado, estropeado } = req.body;
