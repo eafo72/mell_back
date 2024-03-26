@@ -382,6 +382,7 @@ app.get('/ventas', async (req, res) => {
 		const ventas = await Pedidos.find({},
 			{
 				fecha:1,
+				tipo_venta:1,	
 				descripcion:1,
 				estatus_pago:1,
 				parcialidades:1
