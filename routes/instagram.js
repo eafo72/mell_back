@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express.Router()
+const InstagramUsuario = require('../models/InstagramUsers') 
 
 let FormData = require("form-data");
 const fetch = require("node-fetch");
@@ -71,6 +72,37 @@ app.post("/userinfo", async (req, res) => {
       
     
   });
+
+app.post('/adduser', async (req, res) => {
+    const { user, email } = req.body 
+    
+    try {
+  
+      const ifExist = await InstagramUsuario.find( { email: email } )
+  
+      if(ifExist.length > 0){
+  
+        res.status(500).json({
+          msg: 'El correo '+ email +' ya existe',
+        })	
+  
+      }else{
+  
+        const respuesta = await InstagramUsuario.create({
+          user,
+          email
+        });
+
+        res.json({respuesta})
+        
+      }
+      
+    } catch (error) {
+      return res.status(500).json({
+        msg: 'Hubo un error al guardar la información' + error,
+      })
+    }
+  })  
 
 
   module.exports = app
