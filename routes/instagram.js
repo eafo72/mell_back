@@ -23,6 +23,7 @@ app.post("/usertoken", async (req, res) => {
             redirect_uri,
             code: code,
           }),
+          headers: {'Access-Control-Allow-Origin': 'https:landing.flagasamascotas.com'}, 
         }
       );
     
