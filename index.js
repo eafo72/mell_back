@@ -18,7 +18,7 @@ const companyRoutes = require('./routes/company')
 const mercadopagoRoutes = require('./routes/mercadopago')
 const whatsappRoutes = require('./routes/whatsapp')
 
-const instagramRoutes = require('./routes/instagram')
+//const instagramRoutes = require('./routes/instagram')
 
 
 const cors = require('cors')
@@ -51,7 +51,7 @@ app.use('/empresa', companyRoutes)
 app.use('/mercadopago', mercadopagoRoutes)
 app.use('/whatsapp', whatsappRoutes)
 
-app.use('/instagram', instagramRoutes)
+//app.use('/instagram', instagramRoutes)
 
 
 
