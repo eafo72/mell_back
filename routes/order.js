@@ -1,7 +1,8 @@
 /* Importing the express module and creating an instance of it. */
 const express = require('express')
 const app = express.Router()
-const Pedidos = require('../models/Pedidos') // NUESTRO MODELO PARA PERMITIR GENERAR O MODIFICAR USUARIOS CON LA BASE DE DATOS
+const Pedidos = require('../models/Pedidos') 
+const PrePedidos = require('../models/PrePedidos') 
 const Stock = require('../models/Stock')
 const Apartado = require('../models/Apartado')
 const bcryptjs = require('bcryptjs')
@@ -396,5 +397,51 @@ app.get('/ventas', async (req, res) => {
 		res.status(500).json({ msg: 'Hubo un error obteniendo los datos '+error })
 	}
 })
+
+
+/////////////////////////////////////////////// PREPEDIDOS ///////////////////////////////////////////////////////
+// CREAR PREPEDIDO
+app.post('/crearprepedido', async (req, res) => {
+	const { descripcion } = req.body 
+
+	let today = new Date();
+    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(); 
+
+	try {
+
+		const nuevoPrePedido = await PrePedidos.create({
+			descripcion, fecha:date, status: "Pendiente"
+		})
+        
+		res.json(nuevoPrePedido)
+		
+	} catch (error) {
+		res.status(500).json({
+			msg: 'Hubo un error guardando los datos'+error,
+		})
+	}
+})
+
+
+app.get('/prepedidos', async (req, res) => {
+	try {
+		const prepedidos = await PrePedidos.find({},
+			{
+				fecha:1,
+				descripcion:1,
+				status:1,
+			},
+		)
+
+        res.json({prepedidos})
+
+	} catch (error) {
+		res.status(500).json({ msg: 'Hubo un error obteniendo los datos '+error })
+	}
+})
+
+
+
+
 
 module.exports = app
