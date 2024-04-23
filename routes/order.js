@@ -54,6 +54,21 @@ app.get('/single/:id', async (req, res) => {
 })
 
 
+// SINGLE
+app.get('/prepedido_single/:id', async (req, res) => {
+			
+	try {
+		const single = await PrePedidos.findById(req.params.id) 
+		res.json({single})
+		
+
+	} catch (error) {
+		res.status(500).json({ msg: 'Hubo un error obteniendo los datos del id '+req.params.id+' error: '+error })
+	}
+
+})
+
+
 // Checar si hay stock suficiente para surtir el pedido
 app.post('/checkStock', async (req, res) => {
 	const { 
