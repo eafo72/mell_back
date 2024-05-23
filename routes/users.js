@@ -216,6 +216,8 @@ app.post('/contacto', async (req, res) => {
 			html: `<p><strong>Datos de contacto:<strong></p><p><strong>Nombre:<strong> ${nombre}</p><p><strong>Teléfono:<strong> ${telefono}</p><p><strong>Correo:<strong> ${correo}</p><p><strong>Mensaje:<strong> ${mensaje}</p>`, // html body
 		}
 
+		console.log("Enviando correo");
+		
 		const info = await mailer.sendMail(message);
 		console.log(info);
 
