@@ -523,6 +523,7 @@ app.get("/entradas/:id", async (req, res) => {
     },
     {
       $project: {
+        "codigo": "$entrada.codigo",
         "estante": "$entrada.estante",
         "cantidad": "$entrada.cantidad",
         "fechaEntrada": "$entrada.fechaEntrada",
