@@ -525,7 +525,8 @@ app.get("/entradas/:id", async (req, res) => {
       $project: {
         "entrada.datos_producto": "$datos_producto",
         "entrada.datos_talla": "$datos_talla",
-        "entrada.datos_color": "$datos_color"
+        "entrada.datos_color": "$datos_color",
+        _id: 0, // optional, remove if you want to keep the _id field
       }
     }
 	  ]);
