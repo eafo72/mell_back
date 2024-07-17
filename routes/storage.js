@@ -516,12 +516,14 @@ app.get("/entradas/:id", async (req, res) => {
       $group: {
         _id: "$_id",
         entrada: { $mergeObjects: "$$ROOT" },
+        datos_producto: { $first: "$datos_producto" },
         datos_talla: { $push: "$datos_talla" },
         datos_color: { $push: "$datos_color" },
       }
     },
     {
       $project: {
+        "entrada.datos_producto": "$datos_producto",
         "entrada.datos_talla": "$datos_talla",
         "entrada.datos_color": "$datos_color"
       }
