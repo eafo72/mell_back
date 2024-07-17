@@ -515,7 +515,7 @@ app.get("/entradas/:id", async (req, res) => {
     {
       $group: {
         _id: "$_id",
-        entrada: { $mergeObjects: "$$ROOT" },
+        entrada: { $first: "$$ROOT" },
         datos_producto: { $first: "$datos_producto" },
         datos_talla: { $push: "$datos_talla" },
         datos_color: { $push: "$datos_color" },
@@ -529,6 +529,7 @@ app.get("/entradas/:id", async (req, res) => {
         _id: 0, // optional, remove if you want to keep the _id field
       }
     }
+
 	  ]);
   
 	  res.json({ entradas });
