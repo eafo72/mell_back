@@ -515,13 +515,15 @@ app.get("/entradas/:id", async (req, res) => {
     {
       $group: {
         _id: "$_id",
-        id_almacen: { $first: "$id_almacen" },
-        codigo_producto: { $first: "$codigo_producto" },
-        codigo_talla: { $first: "$codigo_talla" },
-        codigo_color: { $first: "$codigo_color" },
-        datos_producto: { $first: "$datos_producto" },
+        entrada: { $mergeObjects: "$$ROOT" },
         datos_talla: { $push: "$datos_talla" },
         datos_color: { $push: "$datos_color" },
+      }
+    },
+    {
+      $project: {
+        "entrada.datos_talla": "$datos_talla",
+        "entrada.datos_color": "$datos_color"
       }
     }
 	  ]);
