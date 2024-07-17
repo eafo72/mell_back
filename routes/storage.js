@@ -512,6 +512,18 @@ app.get("/entradas/:id", async (req, res) => {
 		{
 		  $unwind: "$datos_color",
 		},
+    {
+      $group: {
+        _id: "$_id",
+        id_almacen: { $first: "$id_almacen" },
+        codigo_producto: { $first: "$codigo_producto" },
+        codigo_talla: { $first: "$codigo_talla" },
+        codigo_color: { $first: "$codigo_color" },
+        datos_producto: { $first: "$datos_producto" },
+        datos_talla: { $push: "$datos_talla" },
+        datos_color: { $push: "$datos_color" },
+      }
+    }
 	  ]);
   
 	  res.json({ entradas });
