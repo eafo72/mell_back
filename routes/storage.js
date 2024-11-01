@@ -184,6 +184,7 @@ app.get("/stock-single/:id", async (req, res) => {
 //stock por codigo producto
 app.get("/stock-codigo/:codigo", async (req, res) => {
   try {
+
     const stock = await Stock.aggregate([
       {
         $match: {
@@ -194,17 +195,27 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
         $group: {
           _id: null,
           stockTotal: { $sum: "$stock" },
-          apartadoTotal: { $sum: "$apartado" }, 
+          apartadoTotal: { $sum: "$apartado" }, // Ajustado al nombre correcto
+        },
+      },
+      {
+        $addFields: {
+          stockDisponible: {
+            $cond: {
+              if: { $gte: ["$stockTotal", "$apartadoTotal"] }, // Aseguramos que el nombre sea correcto
+              then: { $subtract: ["$stockTotal", "$apartadoTotal"] },
+              else: "$stockTotal", // Si es menor, usamos solo stockTotal
+            },
+          },
         },
       },
       {
         $project: {
           _id: 0,
-          stockDisponible: { $subtract: ["$stockTotal", "$apartadoTotal"] },
+          stockDisponible: 1,
         },
       },
     ]);
-
 
     
 
