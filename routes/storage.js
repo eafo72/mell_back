@@ -192,7 +192,7 @@ app.get("/stock-single/:id", async (req, res) => {
 app.get("/stock-codigo/:codigo", async (req, res) => {
   try {
 
-       const stock = await Stock.aggregate([
+      const stock = await Stock.aggregate([
         {
           $match: {
             codigo: req.params.codigo,
@@ -201,12 +201,18 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
         {
           $group: {
             _id: null,
-            stockTotal: { $sum: { $subtract: ["$stock", "$apartados"] } },
+            stockTotal: { $sum: "$stock" },
+            apartadosTotal: { $sum: "$apartados" },
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            stockDisponible: { $subtract: ["$stockTotal", "$apartadosTotal"] },
           },
         },
       ]);
 
- 
     res.json({ stock });
 
   } catch (error) {
