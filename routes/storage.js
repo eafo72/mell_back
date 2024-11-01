@@ -200,11 +200,11 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
       },
       {
         $addFields: {
-          stockTotal: { // Renombramos el campo aquí
+          stockTotal: { 
             $cond: {
-              if: { $gte: ["$stockTotal", "$apartadoTotal"] },
-              then: { $subtract: ["$stockTotal", "$apartadoTotal"] },
-              else: "$stockTotal", // Si es menor, usamos solo stockTotal
+              if: { $gte: ["$stockTotal", "$apartadoTotal"] }, // Si stockTotal >= apartadoTotal
+              then: { $subtract: ["$stockTotal", "$apartadoTotal"] }, // Restamos apartadoTotal de stockTotal
+              else: 0, // Si no, devolvemos 0
             },
           },
         },
