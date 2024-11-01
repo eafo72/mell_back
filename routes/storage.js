@@ -206,14 +206,9 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
         },
       },
       {
-        $addFields: {
-          stockDisponible: { $subtract: ["$stockTotal", "$apartadosTotal"] },
-        },
-      },
-      {
         $project: {
           _id: 0,
-          stockDisponible: 1,
+          stockDisponible: { $subtract: ["$stockTotal", "$apartadosTotal"] },
         },
       },
     ]);
