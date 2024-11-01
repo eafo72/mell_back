@@ -194,13 +194,16 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
         $group: {
           _id: null,
           stockTotal: { $sum: "$stock" },
-          apartadosTotal: { $sum: "$apartados" },
+          apartadosTotal: { $sum: { $toDouble: "$apartados" } },
         },
       },
     ]);
 
-    res.json({ stock });
+
     
+
+    res.json({ stock });
+
   } catch (error) {
     res.status(500).json({
       msg:
