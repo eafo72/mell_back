@@ -195,14 +195,14 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
         $group: {
           _id: null,
           stockTotal: { $sum: "$stock" },
-          apartadoTotal: { $sum: "$apartado" }, // Ajustado al nombre correcto
+          apartadoTotal: { $sum: "$apartado" }, // Asegúrate de que este campo sea correcto
         },
       },
       {
         $addFields: {
-          stockDisponible: {
+          stockTotal: { // Renombramos el campo aquí
             $cond: {
-              if: { $gte: ["$stockTotal", "$apartadoTotal"] }, // Aseguramos que el nombre sea correcto
+              if: { $gte: ["$stockTotal", "$apartadoTotal"] },
               then: { $subtract: ["$stockTotal", "$apartadoTotal"] },
               else: "$stockTotal", // Si es menor, usamos solo stockTotal
             },
@@ -212,13 +212,12 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
       {
         $project: {
           _id: 0,
-          stockDisponible: 1,
+          stockTotal: 1,         // se pone 1 para indicar que solo queremos incluir el campo stockTotal en el resultado final y excluir cualquier otro campo
         },
       },
     ]);
 
     
-
     res.json({ stock });
 
   } catch (error) {
