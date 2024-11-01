@@ -29,15 +29,13 @@ app.get("/single/:id", async (req, res) => {
     const single = await Almacen.findById(req.params.id);
     res.json({ single });
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        msg:
-          "Hubo un error obteniendo los datos del id " +
-          req.params.id +
-          " error: " +
-          error,
-      });
+    res.status(500).json({
+      msg:
+        "Hubo un error obteniendo los datos del id " +
+        req.params.id +
+        " error: " +
+        error,
+    });
   }
 });
 
@@ -127,8 +125,8 @@ app.get("/stock/:id", async (req, res) => {
           as: "datos_producto",
         },
       },
-	  {
-        $unwind: "$datos_producto"
+      {
+        $unwind: "$datos_producto",
       },
       {
         $lookup: {
@@ -138,8 +136,8 @@ app.get("/stock/:id", async (req, res) => {
           as: "datos_talla",
         },
       },
-	  {
-        $unwind: "$datos_talla"
+      {
+        $unwind: "$datos_talla",
       },
       {
         $lookup: {
@@ -156,15 +154,13 @@ app.get("/stock/:id", async (req, res) => {
 
     res.json({ stock });
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        msg:
-          "Hubo un error obteniendo los datos del id " +
-          req.params.id +
-          " error: " +
-          error,
-      });
+    res.status(500).json({
+      msg:
+        "Hubo un error obteniendo los datos del id " +
+        req.params.id +
+        " error: " +
+        error,
+    });
   }
 });
 
@@ -172,26 +168,22 @@ app.get("/stock/:id", async (req, res) => {
 app.get("/stock-single/:id", async (req, res) => {
   try {
     const single = await Stock.findById(req.params.id);
-    
-    res.json({ single });
 
+    res.json({ single });
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        msg:
-          "Hubo un error obteniendo los datos del id " +
-          req.params.id +
-          " error: " +
-          error,
-      });
+    res.status(500).json({
+      msg:
+        "Hubo un error obteniendo los datos del id " +
+        req.params.id +
+        " error: " +
+        error,
+    });
   }
 });
 
 //stock por codigo producto
 app.get("/stock-codigo/:codigo", async (req, res) => {
   try {
-
     const stock = await Stock.aggregate([
       {
         $match: {
@@ -205,41 +197,29 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
           apartadosTotal: { $sum: "$apartados" },
         },
       },
-      {
-        $project: {
-          _id: 0,
-          stockDisponible: { $subtract: ["$stockTotal", "$apartadosTotal"] },
-        },
-      },
     ]);
 
     res.json({ stock });
-
+    
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        msg:
-          "Hubo un error obteniendo los datos del id " +
-          req.params.codigo +
-          " error: " +
-          error,
-      });
+    res.status(500).json({
+      msg:
+        "Hubo un error obteniendo los datos del id " +
+        req.params.codigo +
+        " error: " +
+        error,
+    });
   }
 });
-
-
-
-
 
 app.put("/stock-editar", async (req, res) => {
   const { id, stock, apartado, estropeado } = req.body;
   try {
     const updateStock = await Stock.findByIdAndUpdate(id, {
-      $set: { 
-        stock: stock, 
-        apartado:apartado,
-        estropeado:estropeado
+      $set: {
+        stock: stock,
+        apartado: apartado,
+        estropeado: estropeado,
       },
       $currentDate: { lastModified: true },
     });
@@ -265,13 +245,10 @@ app.post("/stock-borrar", async (req, res) => {
   }
 });
 
-
 //////////////////////////////////////////////////// APARTADOS (TODOS)
-
 
 app.get("/apartado/:id", async (req, res) => {
   try {
-    
     const apartado = await Apartado.aggregate([
       {
         $match: {
@@ -286,8 +263,8 @@ app.get("/apartado/:id", async (req, res) => {
           as: "datos_producto",
         },
       },
-	  {
-        $unwind: "$datos_producto"
+      {
+        $unwind: "$datos_producto",
       },
       {
         $lookup: {
@@ -297,8 +274,8 @@ app.get("/apartado/:id", async (req, res) => {
           as: "datos_talla",
         },
       },
-	  {
-        $unwind: "$datos_talla"
+      {
+        $unwind: "$datos_talla",
       },
       {
         $lookup: {
@@ -314,29 +291,25 @@ app.get("/apartado/:id", async (req, res) => {
     ]);
 
     res.json({ apartado });
-
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        msg:
-          "Hubo un error obteniendo los datos del id " +
-          req.params.id +
-          " error: " +
-          error,
-      });
+    res.status(500).json({
+      msg:
+        "Hubo un error obteniendo los datos del id " +
+        req.params.id +
+        " error: " +
+        error,
+    });
   }
 });
 
 // APARTADOS (solo los que no se han procesado)
 app.get("/apartadoOrdenDia/:id", async (req, res) => {
   try {
-    
     const apartadoOrdenDia = await Apartado.aggregate([
       {
         $match: {
           id_almacen: ObjectId(req.params.id),
-          status:"Pendiente"
+          status: "Pendiente",
         },
       },
       {
@@ -347,8 +320,8 @@ app.get("/apartadoOrdenDia/:id", async (req, res) => {
           as: "datos_producto",
         },
       },
-	  {
-        $unwind: "$datos_producto"
+      {
+        $unwind: "$datos_producto",
       },
       {
         $lookup: {
@@ -358,8 +331,8 @@ app.get("/apartadoOrdenDia/:id", async (req, res) => {
           as: "datos_talla",
         },
       },
-	  {
-        $unwind: "$datos_talla"
+      {
+        $unwind: "$datos_talla",
       },
       {
         $lookup: {
@@ -375,17 +348,14 @@ app.get("/apartadoOrdenDia/:id", async (req, res) => {
     ]);
 
     res.json({ apartadoOrdenDia });
-
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        msg:
-          "Hubo un error obteniendo los datos del id " +
-          req.params.id +
-          " error: " +
-          error,
-      });
+    res.status(500).json({
+      msg:
+        "Hubo un error obteniendo los datos del id " +
+        req.params.id +
+        " error: " +
+        error,
+    });
   }
 });
 
@@ -393,12 +363,11 @@ app.get("/apartadoOrdenDia/:id", async (req, res) => {
 //estropeados por almacen
 app.get("/estropeados/:id", async (req, res) => {
   try {
-    
     const estropeados = await Stock.aggregate([
       {
         $match: {
           id_almacen: ObjectId(req.params.id),
-          estropeado: { $gt: 0 } 
+          estropeado: { $gt: 0 },
         },
       },
       {
@@ -409,8 +378,8 @@ app.get("/estropeados/:id", async (req, res) => {
           as: "datos_producto",
         },
       },
-	  {
-        $unwind: "$datos_producto"
+      {
+        $unwind: "$datos_producto",
       },
       {
         $lookup: {
@@ -420,8 +389,8 @@ app.get("/estropeados/:id", async (req, res) => {
           as: "datos_talla",
         },
       },
-	  {
-        $unwind: "$datos_talla"
+      {
+        $unwind: "$datos_talla",
       },
       {
         $lookup: {
@@ -438,15 +407,13 @@ app.get("/estropeados/:id", async (req, res) => {
 
     res.json({ estropeados });
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        msg:
-          "Hubo un error obteniendo los datos del id " +
-          req.params.id +
-          " error: " +
-          error,
-      });
+    res.status(500).json({
+      msg:
+        "Hubo un error obteniendo los datos del id " +
+        req.params.id +
+        " error: " +
+        error,
+    });
   }
 });
 
@@ -475,75 +442,70 @@ app.get("/estropeados/:id", async (req, res) => {
 
 // LISTA
 app.get("/entradas/:id", async (req, res) => {
-  
   try {
-    
-	const entradas = await Entrada.aggregate([
-		{
-		  $match: {
-			id_almacen: ObjectId(req.params.id),
-		  },
-		},
-		{
-		  $lookup: {
-			from: "productos",
-			localField: "codigo_producto",
-			foreignField: "codigo",
-			as: "datos_producto",
-		  },
-		},
-		{
-		  $unwind: "$datos_producto"
-		},
-		{
-		  $lookup: {
-			from: "tallas",
-			localField: "codigo_talla",
-			foreignField: "codigo",
-			as: "datos_talla",
-		  },
-		},
-		{
-		  $unwind: "$datos_talla"
-		},
-		{
-		  $lookup: {
-			from: "colors",
-			localField: "codigo_color",
-			foreignField: "codigo",
-			as: "datos_color",
-		  },
-		},
-		{
-		  $unwind: "$datos_color",
-		},
-    {
-      $group: {
-        _id: "$_id",
-        entrada: { $first: "$$ROOT" },
-        datos_producto: { $first: "$datos_producto" },
-        datos_talla: { $push: "$datos_talla" },
-        datos_color: { $push: "$datos_color" },
-      }
-    },
-    {
-      $project: {
-        "codigo": "$entrada.codigo",
-        "estante": "$entrada.estante",
-        "cantidad": "$entrada.cantidad",
-        "fechaEntrada": "$entrada.fechaEntrada",
-        "proveedor": "$entrada.proveedor",
-        "datos_producto": "$datos_producto",
-        "datos_talla": "$datos_talla",
-        "datos_color": "$datos_color",
-      }
-    }
-	  ]);
-  
-	  res.json({ entradas });
+    const entradas = await Entrada.aggregate([
+      {
+        $match: {
+          id_almacen: ObjectId(req.params.id),
+        },
+      },
+      {
+        $lookup: {
+          from: "productos",
+          localField: "codigo_producto",
+          foreignField: "codigo",
+          as: "datos_producto",
+        },
+      },
+      {
+        $unwind: "$datos_producto",
+      },
+      {
+        $lookup: {
+          from: "tallas",
+          localField: "codigo_talla",
+          foreignField: "codigo",
+          as: "datos_talla",
+        },
+      },
+      {
+        $unwind: "$datos_talla",
+      },
+      {
+        $lookup: {
+          from: "colors",
+          localField: "codigo_color",
+          foreignField: "codigo",
+          as: "datos_color",
+        },
+      },
+      {
+        $unwind: "$datos_color",
+      },
+      {
+        $group: {
+          _id: "$_id",
+          entrada: { $first: "$$ROOT" },
+          datos_producto: { $first: "$datos_producto" },
+          datos_talla: { $push: "$datos_talla" },
+          datos_color: { $push: "$datos_color" },
+        },
+      },
+      {
+        $project: {
+          codigo: "$entrada.codigo",
+          estante: "$entrada.estante",
+          cantidad: "$entrada.cantidad",
+          fechaEntrada: "$entrada.fechaEntrada",
+          proveedor: "$entrada.proveedor",
+          datos_producto: "$datos_producto",
+          datos_talla: "$datos_talla",
+          datos_color: "$datos_color",
+        },
+      },
+    ]);
 
-
-
+    res.json({ entradas });
   } catch (error) {
     res.status(500).json({ msg: "Hubo un error obteniendo los datos" });
   }
@@ -551,60 +513,58 @@ app.get("/entradas/:id", async (req, res) => {
 
 // SINGLE
 app.get("/entrada-single/:id", async (req, res) => {
-	try {
-	  const single = await Entrada.aggregate([
-		{
-			$match: {
-			  _id: ObjectId(req.params.id),
-			},
-		  },
-		  {
-			$lookup: {
-			  from: "productos",
-			  localField: "codigo_producto",
-			  foreignField: "codigo",
-			  as: "datos_producto",
-			},
-		  },
-		  {
-			$unwind: "$datos_producto"
-		  },
-		  {
-			$lookup: {
-			  from: "tallas",
-			  localField: "codigo_talla",
-			  foreignField: "codigo",
-			  as: "datos_talla",
-			},
-		  },
-		  {
-			$unwind: "$datos_talla"
-		  },
-		  {
-			$lookup: {
-			  from: "colors",
-			  localField: "codigo_color",
-			  foreignField: "codigo",
-			  as: "datos_color",
-			},
-		  },
-		  {
-			$unwind: "$datos_color",
-		  },
-	  ]);
-	  res.json({ single });
-	} catch (error) {
-	  res
-		.status(500)
-		.json({
-		  msg:
-			"Hubo un error obteniendo los datos del id " +
-			req.params.id +
-			" error: " +
-			error,
-		});
-	}
-  });
+  try {
+    const single = await Entrada.aggregate([
+      {
+        $match: {
+          _id: ObjectId(req.params.id),
+        },
+      },
+      {
+        $lookup: {
+          from: "productos",
+          localField: "codigo_producto",
+          foreignField: "codigo",
+          as: "datos_producto",
+        },
+      },
+      {
+        $unwind: "$datos_producto",
+      },
+      {
+        $lookup: {
+          from: "tallas",
+          localField: "codigo_talla",
+          foreignField: "codigo",
+          as: "datos_talla",
+        },
+      },
+      {
+        $unwind: "$datos_talla",
+      },
+      {
+        $lookup: {
+          from: "colors",
+          localField: "codigo_color",
+          foreignField: "codigo",
+          as: "datos_color",
+        },
+      },
+      {
+        $unwind: "$datos_color",
+      },
+    ]);
+    res.json({ single });
+  } catch (error) {
+    res.status(500).json({
+      msg:
+        "Hubo un error obteniendo los datos del id " +
+        req.params.id +
+        " error: " +
+        error,
+    });
+  }
+});
 
 // ALTA DE ENTRADA
 app.post("/entrada-alta", async (req, res) => {
@@ -655,9 +615,9 @@ app.post("/entrada-alta", async (req, res) => {
 
     const nuevaEntradaAlmacen = await Entrada.create({
       codigo,
-	  codigo_producto: producto,
-	  codigo_talla: talla,
-	  codigo_color: color,
+      codigo_producto: producto,
+      codigo_talla: talla,
+      codigo_color: color,
       fechaEntrada,
       cantidad,
       proveedor,
@@ -674,152 +634,148 @@ app.post("/entrada-alta", async (req, res) => {
 
 // EDITAR
 app.put("/entrada-editar", async (req, res) => {
-	const { 
-		id, producto, talla, color, fechaEntrada, cantidad, cantidadAnterior, proveedor, id_almacen, nombre_almacen, estante
-	 } = req.body;
-  
-	const codigo = producto + "-" + talla + "-" + color;
+  const {
+    id,
+    producto,
+    talla,
+    color,
+    fechaEntrada,
+    cantidad,
+    cantidadAnterior,
+    proveedor,
+    id_almacen,
+    nombre_almacen,
+    estante,
+  } = req.body;
 
-	try {
-	   //buscamos en stock  PEROOOO TENDRIAMOS QUE BUSCAR EL PRODUCTO ANTERIOR NO EL QUE ESTA LLEGANDO COMO CAMBIO
-	  	const stock_single = await Stock.find({
-		  codigo: codigo,
-		  id_almacen: id_almacen,
-		  estante: estante,
-		});
-	
-	  const oldstock = stock_single[0].stock;
-  
-	  const newstock = oldstock + cantidadAnterior;
-  
-	  //devolvemos lo que descontamos
-	  const updateStock = await Stock.findOneAndUpdate(
-		  {
-			  codigo: codigo,
-			  id_almacen: id_almacen,
-			  estante: estante,
-		  },
-		  {
-			stock:newstock,
-		  },
-		  { new: true }
-		);
-		
-	  //descontar el nuevo producto dl stock
-	  		  
-	  //update de la entrada
-	  
+  const codigo = producto + "-" + talla + "-" + color;
 
+  try {
+    //buscamos en stock  PEROOOO TENDRIAMOS QUE BUSCAR EL PRODUCTO ANTERIOR NO EL QUE ESTA LLEGANDO COMO CAMBIO
+    const stock_single = await Stock.find({
+      codigo: codigo,
+      id_almacen: id_almacen,
+      estante: estante,
+    });
 
+    const oldstock = stock_single[0].stock;
 
+    const newstock = oldstock + cantidadAnterior;
 
-  
-	} catch (error) {
-	  res.status(500).json({
-		msg: "Hubo un error borrando la entrada de almacén "+error,
-	  });
-	}
-  });
+    //devolvemos lo que descontamos
+    const updateStock = await Stock.findOneAndUpdate(
+      {
+        codigo: codigo,
+        id_almacen: id_almacen,
+        estante: estante,
+      },
+      {
+        stock: newstock,
+      },
+      { new: true }
+    );
+
+    //descontar el nuevo producto dl stock
+
+    //update de la entrada
+  } catch (error) {
+    res.status(500).json({
+      msg: "Hubo un error borrando la entrada de almacén " + error,
+    });
+  }
+});
 
 // BORRAR
 app.post("/entrada-borrar", async (req, res) => {
   const { id } = req.body;
 
   try {
-	//primero buscamos los datos de la entrada para regresar la cantidad a stock
-	const entrada_single = await Entrada.find({_id: id});
+    //primero buscamos los datos de la entrada para regresar la cantidad a stock
+    const entrada_single = await Entrada.find({ _id: id });
 
-	const id_almacen = entrada_single[0].id_almacen;
-	const estante = entrada_single[0].estante;
-	const codigo = entrada_single[0].codigo;
-	const cantidad = entrada_single[0].cantidad;
+    const id_almacen = entrada_single[0].id_almacen;
+    const estante = entrada_single[0].estante;
+    const codigo = entrada_single[0].codigo;
+    const cantidad = entrada_single[0].cantidad;
 
-	const stock_single = await Stock.find({
-		codigo: codigo,
-		id_almacen: id_almacen,
-		estante: estante,
-	  });
-  
-	const oldstock = stock_single[0].stock;
+    const stock_single = await Stock.find({
+      codigo: codigo,
+      id_almacen: id_almacen,
+      estante: estante,
+    });
 
-	const newstock = oldstock - cantidad;
+    const oldstock = stock_single[0].stock;
 
-	const updateStock = await Stock.findOneAndUpdate(
-        {
-			codigo: codigo,
-			id_almacen: id_almacen,
-			estante: estante,
-		},
-        {
-          stock:newstock,
-        },
-        { new: true }
-      );
-      
+    const newstock = oldstock - cantidad;
+
+    const updateStock = await Stock.findOneAndUpdate(
+      {
+        codigo: codigo,
+        id_almacen: id_almacen,
+        estante: estante,
+      },
+      {
+        stock: newstock,
+      },
+      { new: true }
+    );
 
     const deleteAlmacenEntrada = await Entrada.findByIdAndRemove({ _id: id });
     res.json(deleteAlmacenEntrada);
-
   } catch (error) {
     res.status(500).json({
-      msg: "Hubo un error borrando la entrada de almacén "+error,
+      msg: "Hubo un error borrando la entrada de almacén " + error,
     });
   }
 });
-
 
 /////////////////////////////////////////////////// SALIDAS ////////////////////////////////////////////////////////////
 
 // LISTA
 app.get("/salidas/:id", async (req, res) => {
-  
   try {
-    
-	const salidas = await Salida.aggregate([
-		{
-		  $match: {
-			id_almacen: ObjectId(req.params.id),
-		  },
-		},
-		{
-		  $lookup: {
-			from: "productos",
-			localField: "codigo_producto",
-			foreignField: "codigo",
-			as: "datos_producto",
-		  },
-		},
-		{
-		  $unwind: "$datos_producto"
-		},
-		{
-		  $lookup: {
-			from: "tallas",
-			localField: "codigo_talla",
-			foreignField: "codigo",
-			as: "datos_talla",
-		  },
-		},
-		{
-		  $unwind: "$datos_talla"
-		},
-		{
-		  $lookup: {
-			from: "colors",
-			localField: "codigo_color",
-			foreignField: "codigo",
-			as: "datos_color",
-		  },
-		},
-		{
-		  $unwind: "$datos_color",
-		},
-	  ]);
-  
-	  res.json({ salidas });
+    const salidas = await Salida.aggregate([
+      {
+        $match: {
+          id_almacen: ObjectId(req.params.id),
+        },
+      },
+      {
+        $lookup: {
+          from: "productos",
+          localField: "codigo_producto",
+          foreignField: "codigo",
+          as: "datos_producto",
+        },
+      },
+      {
+        $unwind: "$datos_producto",
+      },
+      {
+        $lookup: {
+          from: "tallas",
+          localField: "codigo_talla",
+          foreignField: "codigo",
+          as: "datos_talla",
+        },
+      },
+      {
+        $unwind: "$datos_talla",
+      },
+      {
+        $lookup: {
+          from: "colors",
+          localField: "codigo_color",
+          foreignField: "codigo",
+          as: "datos_color",
+        },
+      },
+      {
+        $unwind: "$datos_color",
+      },
+    ]);
 
-
-
+    res.json({ salidas });
   } catch (error) {
     res.status(500).json({ msg: "Hubo un error obteniendo los datos" });
   }
@@ -827,20 +783,21 @@ app.get("/salidas/:id", async (req, res) => {
 
 // ALTA DE SALIDA
 app.post("/salida-alta", async (req, res) => {
-  const {
-    id_apartado
-  } = req.body;
+  const { id_apartado } = req.body;
 
   try {
-
-    
     //buscamos en apartados la info
     const apartado = await Apartado.find({
       _id: id_apartado,
     });
 
     let today = new Date();
-    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(); 
+    let date =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getDate();
 
     const producto = apartado[0].codigo_producto;
     const talla = apartado[0].codigo_talla;
@@ -866,7 +823,6 @@ app.post("/salida-alta", async (req, res) => {
       const oldapartado = single[0].apartado;
       const newapartado = oldapartado - parseInt(cantidad);
 
-
       const nuevoStock = await Stock.updateOne(
         { codigo: codigo, id_almacen: id_almacen, estante: estante },
         {
@@ -882,7 +838,7 @@ app.post("/salida-alta", async (req, res) => {
         codigo_talla: talla,
         codigo_color: color,
         codigo,
-        stock: cantidad * (-1),
+        stock: cantidad * -1,
         apartado: 0,
         estropeado: 0,
       });
@@ -890,51 +846,33 @@ app.post("/salida-alta", async (req, res) => {
 
     const nuevaSalidaAlmacen = await Salida.create({
       codigo,
-	    codigo_producto: producto,
-	    codigo_talla: talla,
-	    codigo_color: color,
+      codigo_producto: producto,
+      codigo_talla: talla,
+      codigo_color: color,
       fechaSalida,
       cantidad,
       id_almacen,
       estante,
       id_apartado,
-      id_pedido
+      id_pedido,
     });
-    
 
     //actualizamos el status del apartado
     const updateAlmacen = await Apartado.findByIdAndUpdate(
       id_apartado,
       {
-        status:"Entregado"
+        status: "Entregado",
       },
       { new: true }
     );
 
     res.json(updateAlmacen);
-
   } catch (error) {
     res.status(500).json({
       msg: "Hubo un error guardando los datos" + error,
     });
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //////////////////////////////////////////////////////////////// ESTANTES  ///////////////////////////////////////////////////////////////////////////
 // Alta
