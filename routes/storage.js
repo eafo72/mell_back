@@ -194,7 +194,13 @@ app.get("/stock-codigo/:codigo", async (req, res) => {
         $group: {
           _id: null,
           stockTotal: { $sum: "$stock" },
-          apartadoTotal: { $sum:  "$apartado" },
+          apartadoTotal: { $sum: "$apartado" }, 
+        },
+      },
+      {
+        $project: {
+          _id: 0,
+          stockDisponible: { $subtract: ["$stockTotal", "$apartadoTotal"] },
         },
       },
     ]);
